@@ -10,6 +10,8 @@
 }
 
 /* ============================= */
+/* Body */
+/* ============================= */
 
 body{
 
@@ -37,11 +39,15 @@ body{
     width:100%;
     height:100%;
 
+    background:#090909;
+
+    /* Uncomment after menu background exists */
+
+    /*
     background-image:url("../assets/backgrounds/menu.png");
-
     background-size:cover;
-
     background-position:center;
+    */
 
     z-index:-5;
 
@@ -58,11 +64,14 @@ body{
     width:100%;
     height:100%;
 
-    background-image:url("../assets/backgrounds/fog.png");
-
     opacity:.25;
 
+    /* Uncomment once fog sprite exists */
+
+    /*
+    background-image:url("../assets/backgrounds/fog.png");
     animation:fogMove 60s linear infinite;
+    */
 
     z-index:-4;
 
@@ -81,6 +90,8 @@ body{
     justify-content:center;
 
     align-items:center;
+
+    text-align:center;
 
     height:100vh;
 
@@ -154,8 +165,6 @@ button{
 
 }
 
-/* ============================= */
-
 button:hover{
 
     background:#4b0000;
@@ -166,14 +175,14 @@ button:hover{
 
 }
 
-/* ============================= */
-
 button:active{
 
     transform:scale(.97);
 
 }
 
+/* ============================= */
+/* Loading Screen */
 /* ============================= */
 
 #loadingScreen{
@@ -197,6 +206,8 @@ button:active{
 }
 
 /* ============================= */
+/* Fade */
+/* ============================= */
 
 #fade{
 
@@ -212,6 +223,8 @@ button:active{
 
 }
 
+/* ============================= */
+/* Fog Animation */
 /* ============================= */
 
 @keyframes fogMove{

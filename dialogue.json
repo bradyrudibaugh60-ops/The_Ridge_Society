@@ -1,1 +1,669 @@
+{
+    "characters": {
 
+        "player": {
+
+            "name": "Player",
+
+            "color": "#ffffff",
+
+            "portrait": "assets/characters/player.png"
+
+        },
+
+
+        "unknown": {
+
+            "name": "???",
+
+            "color": "#ff0000",
+
+            "portrait": "assets/characters/unknown.png"
+
+        },
+
+
+        "leader": {
+
+            "name": "The Leader",
+
+            "color": "#8b0000",
+
+            "portrait": "assets/characters/leader.png"
+
+        }
+
+    },
+
+
+    "dialogues": {
+
+
+        "intro_first_meeting": {
+
+
+            "requiredAct": 1,
+
+
+            "lines": [
+
+
+                {
+
+                    "speaker": "unknown",
+
+                    "text": "Welcome to The Ridge Society."
+
+                },
+
+
+                {
+
+                    "speaker": "unknown",
+
+                    "text": "You have entered a place where answers are harder to find than questions."
+
+                },
+
+
+                {
+
+                    "speaker": "player",
+
+                    "text": "Where am I?"
+
+                },
+
+
+                {
+
+                    "speaker": "unknown",
+
+                    "text": "That depends on what you are searching for."
+
+                }
+
+
+            ]
+
+        },
+
+
+
+        "first_contact": {
+
+
+            "requiredAct": 1,
+
+
+            "lines": [
+
+
+                {
+
+                    "speaker": "leader",
+
+                    "text": "Every member of this society has a purpose."
+
+                },
+
+
+                {
+
+                    "speaker": "leader",
+
+                    "text": "The question is whether you will accept yours."
+
+                }
+
+
+            ]
+
+        },
+
+
+        "warning_message": {
+
+
+            "requiredAct": 1,
+
+
+            "lines": [
+
+
+                {
+
+                    "speaker": "unknown",
+
+                    "emotion": "secret",
+
+                    "text": "Do not trust everything you see."
+
+                },
+
+
+                {
+
+                    "speaker": "unknown",
+
+                    "emotion": "horror",
+
+                    "text": "Some things are watching you already."
+
+                }
+
+
+            ]
+
+        }
+
+    }
+  
+    "choices": {
+
+
+        "first_decision": {
+
+
+            "choices": [
+
+
+                {
+
+                    "text": "I want answers.",
+
+                    "variable": "seeking_truth",
+
+                    "value": true,
+
+                    "next": "truth_path"
+
+
+                },
+
+
+                {
+
+                    "text": "I don't trust this place.",
+
+                    "variable": "distrust",
+
+                    "value": true,
+
+                    "next": "distrust_path"
+
+
+                },
+
+
+                {
+
+                    "text": "I will leave.",
+
+                    "variable": "attempt_escape",
+
+                    "value": true,
+
+                    "next": "escape_path"
+
+
+                }
+
+
+            ]
+
+        }
+
+    },
+
+
+
+    "branching_dialogues": {
+
+
+
+        "truth_path": {
+
+
+            "requiredAct": 1,
+
+
+            "lines": [
+
+
+                {
+
+                    "speaker": "leader",
+
+                    "emotion": "secret",
+
+                    "text": "Curiosity has brought many people here."
+
+                },
+
+
+                {
+
+                    "speaker": "leader",
+
+                    "text": "Few have been brave enough to continue."
+
+                }
+
+
+            ]
+
+        },
+
+
+
+        "distrust_path": {
+
+
+            "requiredAct": 1,
+
+
+            "lines": [
+
+
+                {
+
+                    "speaker": "unknown",
+
+                    "emotion": "sad",
+
+                    "text": "Good. You should question everything."
+
+                },
+
+
+                {
+
+                    "speaker": "unknown",
+
+                    "emotion": "secret",
+
+                    "text": "Including us."
+
+                }
+
+
+            ]
+
+        },
+
+
+
+        "escape_path": {
+
+
+            "requiredAct": 1,
+
+
+            "lines": [
+
+
+                {
+
+                    "speaker": "leader",
+
+                    "emotion": "angry",
+
+                    "text": "Leaving is not as simple as arriving."
+
+                },
+
+
+                {
+
+                    "speaker": "leader",
+
+                    "emotion": "horror",
+
+                    "text": "The Ridge Society remembers everyone who enters."
+
+                }
+
+
+            ]
+
+        }
+
+
+
+    },
+
+
+
+    "variables": {
+
+
+        "seeking_truth": false,
+
+
+        "distrust": false,
+
+
+        "attempt_escape": false
+
+
+    }
+  
+    "act_dialogues": {
+
+
+
+        "act2_awakening": {
+
+
+            "requiredAct": 2,
+
+
+            "lines": [
+
+
+                {
+
+                    "speaker": "player",
+
+                    "emotion": "normal",
+
+                    "text": "Something about this place feels wrong."
+
+                },
+
+
+                {
+
+                    "speaker": "unknown",
+
+                    "emotion": "secret",
+
+                    "text": "You are finally starting to notice."
+
+                },
+
+
+                {
+
+                    "speaker": "unknown",
+
+                    "emotion": "horror",
+
+                    "text": "The Ridge Society was never what it claimed to be."
+
+                }
+
+
+            ]
+
+        },
+
+
+
+        "act2_hidden_room": {
+
+
+            "requiredAct": 2,
+
+
+            "lines": [
+
+
+                {
+
+                    "speaker": "player",
+
+                    "text": "What is this room?"
+
+                },
+
+
+                {
+
+                    "speaker": "unknown",
+
+                    "emotion": "sad",
+
+                    "text": "A place where forgotten things are kept."
+
+                },
+
+
+                {
+
+                    "speaker": "unknown",
+
+                    "emotion": "horror",
+
+                    "text": "Including memories."
+
+                }
+
+
+            ]
+
+        },
+
+
+
+        "act3_revelation": {
+
+
+            "requiredAct": 3,
+
+
+            "lines": [
+
+
+                {
+
+                    "speaker": "leader",
+
+                    "emotion": "secret",
+
+                    "text": "You have uncovered more than most ever do."
+
+                },
+
+
+                {
+
+                    "speaker": "player",
+
+                    "text": "Then tell me the truth."
+
+                },
+
+
+                {
+
+                    "speaker": "leader",
+
+                    "emotion": "horror",
+
+                    "text": "The truth is why this society exists."
+
+                }
+
+
+            ]
+
+        },
+
+
+
+        "act3_final_choice": {
+
+
+            "requiredAct": 3,
+
+
+            "lines": [
+
+
+                {
+
+                    "speaker": "unknown",
+
+                    "text": "Everything you have done has led here."
+
+                },
+
+
+                {
+
+                    "speaker": "unknown",
+
+                    "emotion": "secret",
+
+                    "text": "Now the choice belongs to you."
+
+                }
+
+
+            ]
+
+        }
+
+
+
+    },
+
+
+
+    "restricted_dialogue": {
+
+
+
+        "archive_message": {
+
+
+            "requiredAct": 3,
+
+
+            "lines": [
+
+
+                {
+
+                    "speaker": "unknown",
+
+                    "emotion": "horror",
+
+                    "text": "ACCESSING ARCHIVE..."
+
+                },
+
+
+                {
+
+                    "speaker": "unknown",
+
+                    "emotion": "corrupted",
+
+                    "text": "THE RECORDS WERE NEVER DELETED."
+
+                }
+
+
+            ]
+
+        }
+
+
+
+    }
+ 
+    "settings": {
+
+
+        "typingSpeed": 35,
+
+
+        "allowSkipping": true,
+
+
+        "allowHistory": true,
+
+
+        "enableChoices": true,
+
+
+        "enableBranching": true
+
+
+
+    },
+
+
+
+    "metadata": {
+
+
+        "game": "The Ridge Society",
+
+
+        "creator": "Admiral Armadillo",
+
+
+        "version": "0.1",
+
+
+        "file": "dialogue.json",
+
+
+        "description": "Main dialogue database for The Ridge Society"
+
+
+
+    },
+
+
+
+    "futureActs": {
+
+
+        "act4": {
+
+
+            "unlocked": false,
+
+
+            "created": false
+
+
+        },
+
+
+
+        "act5": {
+
+
+            "unlocked": false,
+
+
+            "created": false
+
+
+        },
+
+
+
+        "act6": {
+
+
+            "unlocked": false,
+
+
+            "created": false
+
+
+        }
+
+
+
+    }
+
+
+} 

@@ -1,1 +1,490 @@
+// =========================================================
+// THE RIDGE SOCIETY
+// EPISODE DATABASE
+// Version 0.1
+// Part 1/4
+// =========================================================
 
+{
+    "episodes": {
+
+
+        "episode_1": {
+
+
+            "id": "episode_1",
+
+
+            "title": "The Arrival",
+
+
+            "act": 1,
+
+
+            "description": "The beginning of the player's journey into The Ridge Society.",
+
+
+            "unlocked": true,
+
+
+            "completed": false,
+
+
+            "startCutscene": "opening_scene",
+
+
+            "endCutscene": "episode1_end",
+
+
+            "requirement": null
+
+
+
+        },
+
+
+
+        "episode_2": {
+
+
+            "id": "episode_2",
+
+
+            "title": "The First Secret",
+
+
+            "act": 1,
+
+
+            "description": "The player begins uncovering hidden information about the Society.",
+
+
+            "unlocked": false,
+
+
+            "completed": false,
+
+
+            "startCutscene": "secret_discovery",
+
+
+            "endCutscene": "episode2_end",
+
+
+            "requirement": {
+
+
+                "type": "episode",
+
+
+                "id": "episode_1"
+
+
+            }
+
+
+
+        },
+
+
+
+        "episode_3": {
+
+
+            "id": "episode_3",
+
+
+            "title": "The Forgotten Room",
+
+
+            "act": 1,
+
+
+            "description": "A hidden location reveals more questions than answers.",
+
+
+            "unlocked": false,
+
+
+            "completed": false,
+
+
+            "startCutscene": "hidden_room_intro",
+
+
+            "endCutscene": "episode3_end",
+
+
+            "requirement": {
+
+
+                "type": "episode",
+
+
+                "id": "episode_2"
+
+
+            }
+
+
+
+        }
+
+    }
+ 
+,
+
+    "episode_4": {
+
+
+        "id": "episode_4",
+
+
+        "title": "The Awakening",
+
+
+        "act": 2,
+
+
+        "description": "The player begins discovering the deeper truth behind The Ridge Society.",
+
+
+        "unlocked": false,
+
+
+        "completed": false,
+
+
+        "startCutscene": "awakening_start",
+
+
+        "endCutscene": "episode4_end",
+
+
+        "requirement": {
+
+
+            "type": "episode",
+
+
+            "id": "episode_3"
+
+
+        }
+
+
+
+    },
+
+
+
+    "episode_5": {
+
+
+        "id": "episode_5",
+
+
+        "title": "Beneath The Ridge",
+
+
+        "act": 2,
+
+
+        "description": "The player explores areas hidden beneath the Society's surface.",
+
+
+        "unlocked": false,
+
+
+        "completed": false,
+
+
+        "startCutscene": "underground_discovery",
+
+
+        "endCutscene": "episode5_end",
+
+
+        "requirement": {
+
+
+            "type": "episode",
+
+
+            "id": "episode_4"
+
+
+        }
+
+
+
+    },
+
+
+
+    "episode_6": {
+
+
+        "id": "episode_6",
+
+
+        "title": "The Missing Records",
+
+
+        "act": 2,
+
+
+        "description": "Lost files reveal fragments of the Society's history.",
+
+
+        "unlocked": false,
+
+
+        "completed": false,
+
+
+        "startCutscene": "archive_found",
+
+
+        "endCutscene": "episode6_end",
+
+
+        "requirement": {
+
+
+            "type": "episode",
+
+
+            "id": "episode_5"
+
+
+        }
+
+
+
+    }
+  
+,
+
+    "episode_7": {
+
+
+        "id": "episode_7",
+
+
+        "title": "The Truth Revealed",
+
+
+        "act": 3,
+
+
+        "description": "The player begins connecting the Society's secrets together.",
+
+
+        "unlocked": false,
+
+
+        "completed": false,
+
+
+        "startCutscene": "truth_reveal_start",
+
+
+        "endCutscene": "episode7_end",
+
+
+        "requirement": {
+
+
+            "type": "episode",
+
+
+            "id": "episode_6"
+
+
+        }
+
+
+
+    },
+
+
+
+    "episode_8": {
+
+
+        "id": "episode_8",
+
+
+        "title": "The Final Archive",
+
+
+        "act": 3,
+
+
+        "description": "The player discovers the hidden records that explain the Society's origins.",
+
+
+        "unlocked": false,
+
+
+        "completed": false,
+
+
+        "startCutscene": "final_archive",
+
+
+        "endCutscene": "episode8_end",
+
+
+        "requirement": {
+
+
+            "type": "episode",
+
+
+            "id": "episode_7"
+
+
+        }
+
+
+
+    },
+
+
+
+    "episode_9": {
+
+
+        "id": "episode_9",
+
+
+        "title": "The Choice",
+
+
+        "act": 3,
+
+
+        "description": "The player's decisions determine the direction of the story.",
+
+
+        "unlocked": false,
+
+
+        "completed": false,
+
+
+        "startCutscene": "final_choice",
+
+
+        "endCutscene": "act3_ending",
+
+
+        "requirement": {
+
+
+            "type": "episode",
+
+
+            "id": "episode_8"
+
+
+        }
+
+
+
+    }
+  
+,
+
+    "settings": {
+
+
+        "totalEpisodes": 9,
+
+
+        "autoUnlock": true,
+
+
+        "trackCompletion": true,
+
+
+        "allowReplay": true
+
+
+
+    },
+
+
+
+    "metadata": {
+
+
+        "game": "The Ridge Society",
+
+
+        "creator": "Admiral Armadillo",
+
+
+        "file": "episodes.json",
+
+
+        "version": "0.1",
+
+
+        "description": "Episode progression database"
+
+
+
+    },
+
+
+
+    "futureActs": {
+
+
+        "act4": {
+
+
+            "planned": true,
+
+
+            "episodesCreated": false
+
+
+        },
+
+
+
+        "act5": {
+
+
+            "planned": true,
+
+
+            "episodesCreated": false
+
+
+        },
+
+
+
+        "act6": {
+
+
+            "planned": true,
+
+
+            "episodesCreated": false
+
+
+        }
+
+
+
+    }
+
+
+
+}

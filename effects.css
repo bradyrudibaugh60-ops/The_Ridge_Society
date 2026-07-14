@@ -258,3 +258,1364 @@
 
 
 }
+/* =========================================================
+   VHS / ANALOG HORROR EFFECTS
+   ========================================================= */
+
+
+/* =========================================================
+   VHS SCREEN FILTER
+   ========================================================= */
+
+
+.vhs-effect {
+
+
+    position:
+    relative;
+
+
+    overflow:
+    hidden;
+
+
+}
+
+
+
+.vhs-effect::before {
+
+
+    content:
+    "";
+
+
+    position:
+    absolute;
+
+
+    top:
+    0;
+
+
+    left:
+    0;
+
+
+    width:
+    100%;
+
+
+    height:
+    100%;
+
+
+    background:
+    repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+
+
+    pointer-events:
+    none;
+
+
+}
+
+
+
+/* =========================================================
+   STATIC NOISE EFFECT
+   ========================================================= */
+
+
+.static-noise {
+
+
+    animation:
+    staticNoise
+    0.2s infinite;
+
+
+}
+
+
+
+@keyframes staticNoise {
+
+
+    0% {
+
+
+        transform:
+        translate(0);
+
+
+    }
+
+
+
+    25% {
+
+
+        transform:
+        translate(2px,-2px);
+
+
+    }
+
+
+
+    50% {
+
+
+        transform:
+        translate(-2px,2px);
+
+
+    }
+
+
+
+    75% {
+
+
+        transform:
+        translate(1px,1px);
+
+
+    }
+
+
+
+    100% {
+
+
+        transform:
+        translate(0);
+
+
+    }
+
+
+}
+
+
+
+/* =========================================================
+   GLITCH SCREEN EFFECT
+   ========================================================= */
+
+
+.screen-glitch {
+
+
+    animation:
+    screenGlitch
+    0.15s infinite;
+
+
+}
+
+
+
+@keyframes screenGlitch {
+
+
+    0% {
+
+
+        transform:
+        translateX(0);
+
+
+    }
+
+
+
+    20% {
+
+
+        transform:
+        translateX(-5px);
+
+
+    }
+
+
+
+    40% {
+
+
+        transform:
+        translateX(5px);
+
+
+    }
+
+
+
+    60% {
+
+
+        transform:
+        translateX(-3px);
+
+
+    }
+
+
+
+    80% {
+
+
+        transform:
+        translateX(3px);
+
+
+    }
+
+
+
+    100% {
+
+
+        transform:
+        translateX(0);
+
+
+    }
+
+
+}
+
+
+
+/* =========================================================
+   COLOR DISTORTION
+   ========================================================= */
+
+
+.color-corruption {
+
+
+    filter:
+    contrast(1.4)
+    saturate(1.5);
+
+
+    animation:
+    colorShift
+    1s infinite;
+
+
+}
+
+
+
+@keyframes colorShift {
+
+
+    0% {
+
+
+        filter:
+        hue-rotate(0deg);
+
+
+    }
+
+
+
+    50% {
+
+
+        filter:
+        hue-rotate(90deg);
+
+
+    }
+
+
+
+    100% {
+
+
+        filter:
+        hue-rotate(0deg);
+
+
+    }
+
+
+}
+
+
+
+/* =========================================================
+   CRT DISPLAY EFFECT
+   ========================================================= */
+
+
+.crt-screen {
+
+
+    box-shadow:
+    inset 0 0 40px rgba(0,0,0,0.8);
+
+
+}
+
+
+
+.crt-screen::after {
+
+
+    content:
+    "";
+
+
+    position:
+    absolute;
+
+
+    inset:
+    0;
+
+
+    background:
+    repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.15),
+        rgba(0,0,0,0.15) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+
+
+    pointer-events:
+    none;
+
+
+}
+/* =========================================================
+   CAMERA EFFECTS
+   ========================================================= */
+
+
+/* =========================================================
+   CAMERA SHAKE
+   ========================================================= */
+
+
+.camera-shake {
+
+
+    animation:
+    cameraShake
+    0.3s;
+
+
+}
+
+
+
+@keyframes cameraShake {
+
+
+    0% {
+
+
+        transform:
+        translate(0);
+
+
+    }
+
+
+
+    20% {
+
+
+        transform:
+        translate(-8px, 4px);
+
+
+    }
+
+
+
+    40% {
+
+
+        transform:
+        translate(8px, -4px);
+
+
+    }
+
+
+
+    60% {
+
+
+        transform:
+        translate(-5px, 3px);
+
+
+    }
+
+
+
+    80% {
+
+
+        transform:
+        translate(5px, -3px);
+
+
+    }
+
+
+
+    100% {
+
+
+        transform:
+        translate(0);
+
+
+    }
+
+
+}
+
+
+
+/* =========================================================
+   HEAVY IMPACT SHAKE
+   ========================================================= */
+
+
+.camera-impact {
+
+
+    animation:
+    impactShake
+    0.5s;
+
+
+}
+
+
+
+@keyframes impactShake {
+
+
+    0% {
+
+
+        transform:
+        translate(0);
+
+
+    }
+
+
+
+    10% {
+
+
+        transform:
+        translate(-15px);
+
+
+    }
+
+
+
+    20% {
+
+
+        transform:
+        translate(15px);
+
+
+    }
+
+
+
+    30% {
+
+
+        transform:
+        translate(-10px);
+
+
+    }
+
+
+
+    40% {
+
+
+        transform:
+        translate(10px);
+
+
+    }
+
+
+
+    100% {
+
+
+        transform:
+        translate(0);
+
+
+    }
+
+
+}
+
+
+
+/* =========================================================
+   CAMERA ZOOM EFFECTS
+   ========================================================= */
+
+
+.camera-zoom-in {
+
+
+    animation:
+    zoomIn
+    1s forwards;
+
+
+}
+
+
+
+@keyframes zoomIn {
+
+
+    from {
+
+
+        transform:
+        scale(1);
+
+
+    }
+
+
+
+    to {
+
+
+        transform:
+        scale(1.2);
+
+
+    }
+
+
+}
+
+
+
+.camera-zoom-out {
+
+
+    animation:
+    zoomOut
+    1s forwards;
+
+
+}
+
+
+
+@keyframes zoomOut {
+
+
+    from {
+
+
+        transform:
+        scale(1.2);
+
+
+    }
+
+
+
+    to {
+
+
+        transform:
+        scale(1);
+
+
+    }
+
+
+}
+
+
+
+/* =========================================================
+   CINEMATIC LETTERBOX
+   ========================================================= */
+
+
+.cinematic-bars::before,
+
+
+.cinematic-bars::after {
+
+
+    content:
+    "";
+
+
+    position:
+    fixed;
+
+
+    left:
+    0;
+
+
+    width:
+    100%;
+
+
+    height:
+    10%;
+
+
+    background:
+    black;
+
+
+    z-index:
+    9998;
+
+
+}
+
+
+
+.cinematic-bars::before {
+
+
+    top:
+    0;
+
+
+}
+
+
+
+.cinematic-bars::after {
+
+
+    bottom:
+    0;
+
+
+}
+
+
+
+/* =========================================================
+   SLOW MOTION EFFECT
+   ========================================================= */
+
+
+.slow-motion {
+
+
+    animation-duration:
+    2s !important;
+
+
+}
+
+
+
+/* =========================================================
+   DARKNESS EFFECT
+   ========================================================= */
+
+
+.darkness-overlay {
+
+
+    background:
+    rgba(0,0,0,0.85);
+
+
+    animation:
+    darknessFade
+    1s;
+
+
+}
+
+
+
+@keyframes darknessFade {
+
+
+    from {
+
+
+        opacity:
+        0;
+
+
+    }
+
+
+
+    to {
+
+
+        opacity:
+        1;
+
+
+    }
+
+
+}
+/* =========================================================
+   PS1 RETRO GRAPHICS EFFECTS
+   ========================================================= */
+
+
+/* =========================================================
+   LOW RESOLUTION DISPLAY EFFECT
+   ========================================================= */
+
+
+.ps1-display {
+
+
+    image-rendering:
+    pixelated;
+
+
+    image-rendering:
+    crisp-edges;
+
+
+    filter:
+    contrast(1.15);
+
+
+}
+
+
+
+/* =========================================================
+   PIXELATED TEXTURE STYLE
+   ========================================================= */
+
+
+.pixel-texture {
+
+
+    image-rendering:
+    pixelated;
+
+
+    filter:
+    none;
+
+
+}
+
+
+
+/* =========================================================
+   RETRO COLOR LIMITER
+   ========================================================= */
+
+
+.retro-palette {
+
+
+    filter:
+    contrast(1.2)
+    saturate(0.8);
+
+
+}
+
+
+
+/* =========================================================
+   PS1 DITHERING EFFECT
+   ========================================================= */
+
+
+.dither-effect {
+
+
+    position:
+    relative;
+
+
+}
+
+
+
+.dither-effect::after {
+
+
+    content:
+    "";
+
+
+    position:
+    absolute;
+
+
+    inset:
+    0;
+
+
+    background:
+    repeating-linear-gradient(
+        45deg,
+        rgba(255,255,255,0.04),
+        rgba(255,255,255,0.04) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+
+
+    pointer-events:
+    none;
+
+
+}
+
+
+
+/* =========================================================
+   FOG ATMOSPHERE
+   ========================================================= */
+
+
+.fog-effect {
+
+
+    position:
+    relative;
+
+
+    overflow:
+    hidden;
+
+
+}
+
+
+
+.fog-effect::before {
+
+
+    content:
+    "";
+
+
+    position:
+    absolute;
+
+
+    inset:
+    -50%;
+
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(200,200,200,0.15),
+        transparent 70%
+    );
+
+
+    animation:
+    fogMove
+    15s infinite linear;
+
+
+}
+
+
+
+@keyframes fogMove {
+
+
+    from {
+
+
+        transform:
+        translateX(-10%);
+
+
+    }
+
+
+
+    to {
+
+
+        transform:
+        translateX(10%);
+
+
+    }
+
+
+}
+
+
+
+/* =========================================================
+   DARK PS1 HORROR FILTER
+   ========================================================= */
+
+
+.ps1-horror {
+
+
+    filter:
+    contrast(1.3)
+    brightness(0.75)
+    saturate(0.7);
+
+
+}
+
+
+
+/* =========================================================
+   OLD CAMERA EFFECT
+   ========================================================= */
+
+
+.handheld-camera {
+
+
+    animation:
+    handheldMovement
+    0.8s infinite;
+
+
+}
+
+
+
+@keyframes handheldMovement {
+
+
+    0% {
+
+
+        transform:
+        translate(0);
+
+
+    }
+
+
+
+    50% {
+
+
+        transform:
+        translate(2px,-1px);
+
+
+    }
+
+
+
+    100% {
+
+
+        transform:
+        translate(0);
+
+
+    }
+
+
+}
+
+
+
+/* =========================================================
+   VHS + PS1 COMBINATION
+   ========================================================= */
+
+
+.ps1-vhs {
+
+
+    image-rendering:
+    pixelated;
+
+
+    filter:
+    contrast(1.25);
+
+
+    animation:
+    screenGlitch
+    2s infinite;
+
+
+}
+/* =========================================================
+   ENVIRONMENTAL EFFECTS
+   ========================================================= */
+
+
+/* =========================================================
+   RAIN EFFECT
+   ========================================================= */
+
+
+.rain-effect {
+
+
+    position:
+    relative;
+
+
+    overflow:
+    hidden;
+
+
+}
+
+
+
+.rain-effect::before {
+
+
+    content:
+    "";
+
+
+    position:
+    absolute;
+
+
+    inset:
+    0;
+
+
+    background:
+    repeating-linear-gradient(
+        100deg,
+        transparent,
+        transparent 8px,
+        rgba(255,255,255,0.12) 9px
+    );
+
+
+    animation:
+    rainFall
+    0.5s linear infinite;
+
+
+}
+
+
+
+@keyframes rainFall {
+
+
+    from {
+
+
+        transform:
+        translateY(-20px);
+
+
+    }
+
+
+
+    to {
+
+
+        transform:
+        translateY(20px);
+
+
+    }
+
+
+}
+
+
+
+/* =========================================================
+   BLOOD DAMAGE EFFECT
+   ========================================================= */
+
+
+.damage-overlay {
+
+
+    background:
+    rgba(150,0,0,0.45);
+
+
+    animation:
+    damageFlash
+    0.4s;
+
+
+}
+
+
+
+@keyframes damageFlash {
+
+
+    0% {
+
+
+        opacity:
+        1;
+
+
+    }
+
+
+
+    100% {
+
+
+        opacity:
+        0;
+
+
+    }
+
+
+}
+
+
+
+/* =========================================================
+   HEARTBEAT EFFECT
+   ========================================================= */
+
+
+.heartbeat {
+
+
+    animation:
+    heartbeatPulse
+    1s infinite;
+
+
+}
+
+
+
+@keyframes heartbeatPulse {
+
+
+    0% {
+
+
+        transform:
+        scale(1);
+
+
+    }
+
+
+
+    15% {
+
+
+        transform:
+        scale(1.03);
+
+
+    }
+
+
+
+    30% {
+
+
+        transform:
+        scale(1);
+
+
+    }
+
+
+
+    100% {
+
+
+        transform:
+        scale(1);
+
+
+    }
+
+
+}
+
+
+
+/* =========================================================
+   TENSION EFFECT
+   ========================================================= */
+
+
+.tension-mode {
+
+
+    filter:
+    brightness(0.6);
+
+
+    animation:
+    tensionPulse
+    2s infinite;
+
+
+}
+
+
+
+@keyframes tensionPulse {
+
+
+    0% {
+
+
+        filter:
+        brightness(0.6);
+
+
+    }
+
+
+
+    50% {
+
+
+        filter:
+        brightness(0.45);
+
+
+    }
+
+
+
+    100% {
+
+
+        filter:
+        brightness(0.6);
+
+
+    }
+
+
+}
+
+
+
+/* =========================================================
+   FINAL HORROR POLISH
+   ========================================================= */
+
+
+.horror-mode {
+
+
+    animation:
+
+
+    screenGlitch
+    0.8s infinite;
+
+
+}
+
+
+
+.mystery-mode {
+
+
+    filter:
+
+
+    grayscale(0.4)
+    contrast(1.2);
+
+
+}
+
+
+
+/* =========================================================
+   ACCESSIBILITY REDUCED MOTION
+   ========================================================= */
+
+
+@media (prefers-reduced-motion: reduce) {
+
+
+    *,
+    *::before,
+    *::after {
+
+
+        animation-duration:
+        0.01ms !important;
+
+
+        animation-iteration-count:
+        1 !important;
+
+
+        scroll-behavior:
+        auto !important;
+
+
+    }
+
+
+}
+
+
+
+/* =========================================================
+   THE RIDGE SOCIETY
+   EFFECTS SYSTEM COMPLETE
+   ========================================================= */

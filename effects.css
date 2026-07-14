@@ -1,1 +1,260 @@
+/* =========================================================
+   THE RIDGE SOCIETY
+   VISUAL EFFECTS SYSTEM
+   Version 0.1
+   Part 1/5
+   ========================================================= */
 
+
+/* =========================================================
+   GLOBAL TRANSITIONS
+   ========================================================= */
+
+
+.effect-transition {
+
+
+    transition:
+    all 0.4s ease;
+
+
+}
+
+
+
+/* =========================================================
+   FADE EFFECTS
+   ========================================================= */
+
+
+.fade-in {
+
+
+    animation:
+    fadeIn
+    0.5s ease forwards;
+
+
+}
+
+
+
+.fade-out {
+
+
+    animation:
+    fadeOut
+    0.5s ease forwards;
+
+
+}
+
+
+
+@keyframes fadeIn {
+
+
+    from {
+
+
+        opacity:
+        0;
+
+
+    }
+
+
+
+    to {
+
+
+        opacity:
+        1;
+
+
+    }
+
+
+}
+
+
+
+@keyframes fadeOut {
+
+
+    from {
+
+
+        opacity:
+        1;
+
+
+    }
+
+
+
+    to {
+
+
+        opacity:
+        0;
+
+
+    }
+
+
+}
+
+
+
+/* =========================================================
+   SCREEN OVERLAY SYSTEM
+   ========================================================= */
+
+
+.screen-overlay {
+
+
+    position:
+    fixed;
+
+
+    top:
+    0;
+
+
+    left:
+    0;
+
+
+    width:
+    100%;
+
+
+    height:
+    100%;
+
+
+    pointer-events:
+    none;
+
+
+    z-index:
+    9999;
+
+
+}
+
+
+
+/* =========================================================
+   BLACK SCREEN
+   ========================================================= */
+
+
+.black-screen {
+
+
+    background:
+    black;
+
+
+}
+
+
+
+/* =========================================================
+   WHITE FLASH
+   ========================================================= */
+
+
+.white-flash {
+
+
+    background:
+    white;
+
+
+    animation:
+    flashEffect
+    0.2s;
+
+
+}
+
+
+
+@keyframes flashEffect {
+
+
+    0% {
+
+
+        opacity:
+        1;
+
+
+    }
+
+
+
+    100% {
+
+
+        opacity:
+        0;
+
+
+    }
+
+
+}
+
+
+
+/* =========================================================
+   RED HORROR FLASH
+   ========================================================= */
+
+
+.red-flash {
+
+
+    background:
+    rgba(255,0,0,0.5);
+
+
+    animation:
+    redFlash
+    0.4s;
+
+
+}
+
+
+
+@keyframes redFlash {
+
+
+    from {
+
+
+        opacity:
+        1;
+
+
+    }
+
+
+
+    to {
+
+
+        opacity:
+        0;
+
+
+    }
+
+
+}

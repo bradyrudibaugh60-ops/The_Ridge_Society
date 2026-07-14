@@ -1,1 +1,2648 @@
+{
+    "game": "The Ridge Society",
+    "version": "0.1",
+    "achievementCount": 0,
 
+    "achievements": [
+
+        {
+            "id": "first_steps",
+            "title": "First Steps",
+            "description": "Begin your journey within The Ridge Society.",
+            "category": "Story",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "event",
+
+                "event": "GAME_START"
+
+            },
+
+            "reward": {
+
+                "type": "achievement",
+
+                "value": "First Steps"
+
+            },
+
+            "act": 1,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "welcome_to_the_ridge",
+            "title": "Welcome To The Ridge",
+            "description": "Become accepted into the Ridge Society.",
+
+            "category": "Story",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "event",
+
+                "event": "JOINED_SOCIETY"
+
+            },
+
+            "reward": {
+
+                "type": "achievement",
+
+                "value": "Welcome To The Ridge"
+
+            },
+
+            "act": 1,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "act_one_complete",
+            "title": "The Flock",
+
+            "description": "Complete Act I of The Ridge Society.",
+
+            "category": "Story",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "act",
+
+                "act": 1,
+
+                "complete": true
+
+            },
+
+            "reward": {
+
+                "type": "unlock",
+
+                "value": "Act 2"
+
+            },
+
+            "act": 1,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "act_two_complete",
+            "title": "The Shepherd's Work",
+
+            "description": "Complete Act II of The Ridge Society.",
+
+            "category": "Story",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "act",
+
+                "act": 2,
+
+                "complete": true
+
+            },
+
+            "reward": {
+
+                "type": "unlock",
+
+                "value": "Act 3"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "act_three_complete",
+            "title": "The Final Revelation",
+
+            "description": "Complete Act III and uncover the truth of The Ridge Society.",
+
+            "category": "Story",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "act",
+
+                "act": 3,
+
+                "complete": true
+
+            },
+
+            "reward": {
+
+                "type": "ending",
+
+                "value": "Complete"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "first_discovery",
+
+            "title": "Something Is Wrong",
+
+            "description": "Discover your first hidden secret.",
+
+            "category": "Exploration",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "event",
+
+                "event": "FOUND_SECRET"
+
+            },
+
+            "reward": {
+
+                "type": "lore",
+
+                "value": "Hidden Truth"
+
+            },
+
+            "act": 1,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "forbidden_area",
+
+            "title": "Where You Shouldn't Be",
+
+            "description": "Enter a location forbidden by The Ridge Society.",
+
+            "category": "Exploration",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "location",
+
+                "location": "forbidden_area"
+
+            },
+
+            "reward": {
+
+                "type": "lore",
+
+                "value": "Forbidden Records"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "old_records",
+
+            "title": "The Forgotten Records",
+
+            "description": "Find records hidden from the Society.",
+
+            "category": "Exploration",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "item",
+
+                "item": "lost_journal"
+
+            },
+
+            "reward": {
+
+                "type": "lore",
+
+                "value": "Historical Archive"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+        {
+            "id": "faithful_member",
+
+            "title": "A Faithful Member",
+
+            "description": "Earn the trust of The Ridge Society.",
+
+            "category": "Player",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "faith",
+
+                "value": 100
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 1,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "reputation",
+
+                "value": "Elder Trust"
+
+            },
+
+            "act": 1,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "doubt_begins",
+
+            "title": "A Crack In The Faith",
+
+            "description": "Begin questioning what The Ridge Society teaches.",
+
+            "category": "Player",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "choice",
+
+                "choice": "QUESTIONED_BELIEF"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 1,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "story",
+
+                "value": "Doubt Path"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "outsider",
+
+            "title": "The Outsider",
+
+            "description": "Lose the trust of The Ridge Society.",
+
+            "category": "Player",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "suspicion",
+
+                "value": 100
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 2,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "path",
+
+                "value": "Escape Route"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "elder_favor",
+
+            "title": "The Elder's Favor",
+
+            "description": "Gain the personal approval of the Society's leadership.",
+
+            "category": "Relationships",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "relationship",
+
+                "character": "elder_marrow",
+
+                "value": 100
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 1,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "access",
+
+                "value": "Restricted Areas"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "the_hidden_chamber",
+
+            "title": "Behind The Wall",
+
+            "description": "Discover the hidden chamber beneath the Society grounds.",
+
+            "category": "Secret",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "location",
+
+                "location": "hidden_chamber"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 2,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "lore",
+
+                "value": "Deep History"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+        {
+            "id": "truth_seeker",
+
+            "title": "The Truth Seeker",
+
+            "description": "Begin uncovering the reality behind The Ridge Society.",
+
+            "category": "Lore",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "lore",
+
+                "amount": 5
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 2,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "story",
+
+                "value": "Truth Investigation"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "the_archives",
+
+            "title": "The Archives",
+
+            "description": "Access the hidden records of The Ridge Society.",
+
+            "category": "Lore",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "location",
+
+                "location": "society_archive"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 2,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "item",
+
+                "value": "Ancient Records"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "the_true_believer",
+
+            "title": "The True Believer",
+
+            "description": "Fully devote yourself to The Ridge Society.",
+
+            "category": "Faith",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "loyalty",
+
+                "value": 100
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 2,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "endingPath",
+
+                "value": "Devoted"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "the_escape",
+
+            "title": "The Way Out",
+
+            "description": "Find a path to escape The Ridge Society.",
+
+            "category": "Ending",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "ending",
+
+                "path": "escape"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "ending",
+
+                "value": "Escape"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "the_revelation",
+
+            "title": "The Revelation",
+
+            "description": "Discover the final truth hidden beneath The Ridge.",
+
+            "category": "Ending",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "ending",
+
+                "path": "truth"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "ending",
+
+                "value": "Truth Ending"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "perfect_record",
+
+            "title": "The Complete Record",
+
+            "description": "Unlock every achievement in The Ridge Society.",
+
+            "category": "Completion",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "completion",
+
+                "value": 100
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "special",
+
+                "value": "Final Archive"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "three_paths",
+
+            "title": "Three Roads",
+
+            "description": "Complete all major story paths.",
+
+            "category": "Completion",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "endings",
+
+                "amount": 3
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "bonus",
+
+                "value": "Secret Scene"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+        {
+            "id": "first_day",
+
+            "title": "A New Beginning",
+
+            "description": "Complete your first day within The Ridge Society.",
+
+            "category": "Life",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "days",
+
+                "amount": 1
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 1,
+
+                "requiresCompletion": false
+
+            },
+
+            "reward": {
+
+                "type": "unlock",
+
+                "value": "Daily Routine"
+
+            },
+
+            "act": 1,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "one_month_member",
+
+            "title": "A Month Among The Flock",
+
+            "description": "Remain a member of The Ridge Society for one month.",
+
+            "category": "Life",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "days",
+
+                "amount": 30
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 1,
+
+                "requiresCompletion": false
+
+            },
+
+            "reward": {
+
+                "type": "story",
+
+                "value": "Time Progression"
+
+            },
+
+            "act": 1,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "year_of_service",
+
+            "title": "A Year Of Service",
+
+            "description": "Spend a full year living under The Ridge Society.",
+
+            "category": "Life",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "days",
+
+                "amount": 365
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 1,
+
+                "requiresCompletion": false
+
+            },
+
+            "reward": {
+
+                "type": "lore",
+
+                "value": "Lost Memories"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "routine_master",
+
+            "title": "Every Day Is The Same",
+
+            "description": "Complete every normal daily activity.",
+
+            "category": "Life",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "routine",
+
+                "tasks": [
+
+                    "wake_up",
+
+                    "work",
+
+                    "attend_service",
+
+                    "return_home"
+
+                ]
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 1,
+
+                "requiresCompletion": false
+
+            },
+
+            "reward": {
+
+                "type": "system",
+
+                "value": "Routine Completed"
+
+            },
+
+            "act": 1,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "question_the_routine",
+
+            "title": "Something Feels Wrong",
+
+            "description": "Notice inconsistencies within your daily life.",
+
+            "category": "Story",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "suspicion",
+
+                "value": 25
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 1,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "story",
+
+                "value": "Awareness"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "first_assignment",
+
+            "title": "The First Duty",
+
+            "description": "Complete your first task assigned by The Ridge Society.",
+
+            "category": "Story",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "quest",
+
+                "quest": "first_assignment"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 1,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "rank",
+
+                "value": "Initiate"
+
+            },
+
+            "act": 1,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "trusted_member",
+
+            "title": "A Trusted Member",
+
+            "description": "Gain enough trust to receive important assignments.",
+
+            "category": "Rank",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "rank",
+
+                "value": "Trusted"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 1,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "access",
+
+                "value": "Restricted Tasks"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+        {
+            "id": "society_elite",
+
+            "title": "Among The Inner Circle",
+
+            "description": "Rise high enough to gain access to the Society's inner circle.",
+
+            "category": "Rank",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "rank",
+
+                "value": "Inner Circle"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 2,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "access",
+
+                "value": "Inner Chamber"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "the_old_ways",
+
+            "title": "The Old Ways",
+
+            "description": "Learn about the origins of The Ridge Society.",
+
+            "category": "Lore",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "lore",
+
+                "amount": 15
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 2,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "lore",
+
+                "value": "Founder's History"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "the_first_ceremony",
+
+            "title": "The First Ceremony",
+
+            "description": "Witness a major Society ceremony.",
+
+            "category": "Events",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "event",
+
+                "event": "FIRST_CEREMONY"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 1,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "story",
+
+                "value": "Ceremony Access"
+
+            },
+
+            "act": 1,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "hidden_observer",
+
+            "title": "Watching From The Shadows",
+
+            "description": "Discover someone secretly monitoring The Ridge Society.",
+
+            "category": "Secret",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "event",
+
+                "event": "FOUND_OBSERVER"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 2,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "character",
+
+                "value": "Unknown Observer"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "the_final_trial",
+
+            "title": "The Final Trial",
+
+            "description": "Reach the final stage of your journey within The Ridge Society.",
+
+            "category": "Story",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "event",
+
+                "event": "FINAL_TRIAL"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "story",
+
+                "value": "Final Sequence"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "memory_keeper",
+
+            "title": "Keeper Of Memories",
+
+            "description": "Recover lost memories from before joining the Society.",
+
+            "category": "Secret",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "memory",
+
+                "amount": 10
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "endingPath",
+
+                "value": "Memory Ending"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "the_last_record",
+
+            "title": "The Last Record",
+
+            "description": "Find the final piece of evidence hidden away.",
+
+            "category": "Lore",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "item",
+
+                "item": "final_record"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "ending",
+
+                "value": "True Ending"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+        {
+            "id": "devoted_path",
+
+            "title": "No Turning Back",
+
+            "description": "Commit completely to The Ridge Society's teachings.",
+
+            "category": "Path",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "path",
+
+                "name": "devoted",
+
+                "progress": 100
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "ending",
+
+                "value": "Devoted Ending"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "rebel_path",
+
+            "title": "Breaking The Chain",
+
+            "description": "Begin resisting The Ridge Society.",
+
+            "category": "Path",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "path",
+
+                "name": "rebel",
+
+                "progress": 50
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 2,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "endingPath",
+
+                "value": "Rebellion"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "investigator_path",
+
+            "title": "Finding The Truth",
+
+            "description": "Follow the evidence instead of the teachings.",
+
+            "category": "Path",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "path",
+
+                "name": "investigator",
+
+                "progress": 100
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 2,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "endingPath",
+
+                "value": "Truth Seeker"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "complete_collection",
+
+            "title": "Collector Of Secrets",
+
+            "description": "Discover every major piece of hidden information.",
+
+            "category": "Completion",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "collect",
+
+                "category": "lore",
+
+                "amount": 100
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "bonus",
+
+                "value": "Developer Notes"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "perfect_loyalty",
+
+            "title": "The Ideal Member",
+
+            "description": "Maintain maximum loyalty throughout the story.",
+
+            "category": "Challenge",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "stat",
+
+                "stat": "loyalty",
+
+                "value": 100,
+
+                "minimumTime": "endgame"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "special",
+
+                "value": "Secret Scene"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "survivor",
+
+            "title": "Still Standing",
+
+            "description": "Reach the end of the story and survive.",
+
+            "category": "Ending",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "survival",
+
+                "complete": true
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "achievement",
+
+                "value": "Survivor"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+        {
+            "id": "second_chance",
+
+            "title": "A Different Choice",
+
+            "description": "Replay the story and choose a different path.",
+
+            "category": "Replay",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "new_game",
+
+                "completedBefore": true
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 1,
+
+                "requiresCompletion": false
+
+            },
+
+            "reward": {
+
+                "type": "unlock",
+
+                "value": "New Dialogue"
+
+            },
+
+            "act": 1,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "all_endings",
+
+            "title": "Every Possible Road",
+
+            "description": "Experience every major ending.",
+
+            "category": "Completion",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "endings",
+
+                "amount": 5
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "unlock",
+
+                "value": "Bonus Chapter"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "silent_watcher",
+
+            "title": "The Silent Watcher",
+
+            "description": "Notice something following you throughout your journey.",
+
+            "category": "Secret",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "event",
+
+                "event": "WATCHER_SEEN"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 2,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "lore",
+
+                "value": "Watcher Records"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "the_broken_symbol",
+
+            "title": "A Broken Symbol",
+
+            "description": "Find evidence that challenges the Society's beliefs.",
+
+            "category": "Secret",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "item",
+
+                "item": "broken_symbol"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 2,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "story",
+
+                "value": "Hidden Doubt"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "the_last_day",
+
+            "title": "The Last Day",
+
+            "description": "Reach the final day within The Ridge Society.",
+
+            "category": "Story",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "event",
+
+                "event": "FINAL_DAY"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "story",
+
+                "value": "Final Sequence"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "flawless_run",
+
+            "title": "Perfect Journey",
+
+            "description": "Complete the game without failing any major objectives.",
+
+            "category": "Challenge",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "challenge",
+
+                "condition": "no_major_failures"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "special",
+
+                "value": "Hidden Ending Scene"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "ridge_master",
+
+            "title": "Master Of The Ridge",
+
+            "description": "Unlock every achievement within The Ridge Society.",
+
+            "category": "Ultimate",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "achievements",
+
+                "amount": 100
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "special",
+
+                "value": "Ultimate Archive"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+        {
+            "id": "early_warning",
+
+            "title": "The Signs Were There",
+
+            "description": "Notice the warning signs before others do.",
+
+            "category": "Observation",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "observation",
+
+                "amount": 10
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 1,
+
+                "requiresCompletion": false
+
+            },
+
+            "reward": {
+
+                "type": "skill",
+
+                "value": "Awareness"
+
+            },
+
+            "act": 1,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "perfect_routine",
+
+            "title": "A Normal Life",
+
+            "description": "Complete a full routine cycle without breaking your schedule.",
+
+            "category": "Routine",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "routine",
+
+                "days": 7,
+
+                "mistakes": 0
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 1,
+
+                "requiresCompletion": false
+
+            },
+
+            "reward": {
+
+                "type": "bonus",
+
+                "value": "Routine Memory"
+
+            },
+
+            "act": 1,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "lost_friend",
+
+            "title": "Someone Is Missing",
+
+            "description": "Discover that someone close to you has disappeared.",
+
+            "category": "Story",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "event",
+
+                "event": "FRIEND_MISSING"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 2,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "story",
+
+                "value": "Investigation Begins"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "hidden_message",
+
+            "title": "A Message Left Behind",
+
+            "description": "Find a hidden message meant for you.",
+
+            "category": "Secret",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "item",
+
+                "item": "hidden_message"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 2,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "lore",
+
+                "value": "Unknown History"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "final_choice",
+
+            "title": "The Final Choice",
+
+            "description": "Make the decision that determines your ending.",
+
+            "category": "Ending",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "choice",
+
+                "event": "FINAL_DECISION"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "ending",
+
+                "value": "Determined"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "secret_history",
+
+            "title": "The History They Hid",
+
+            "description": "Discover every hidden record about The Ridge Society.",
+
+            "category": "Lore",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "lore",
+
+                "amount": 100
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "unlock",
+
+                "value": "Archive Room"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+        {
+            "id": "achievement_hunter",
+
+            "title": "The Hunter",
+
+            "description": "Unlock a large collection of achievements.",
+
+            "category": "Completion",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "achievementCount",
+
+                "amount": 25
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 2,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "bonus",
+
+                "value": "Achievement Gallery"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "master_investigator",
+
+            "title": "Master Investigator",
+
+            "description": "Find every major clue connected to The Ridge Society.",
+
+            "category": "Lore",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "clues",
+
+                "amount": 50
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "unlock",
+
+                "value": "Investigator Notes"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "the_old_house",
+
+            "title": "The Old House",
+
+            "description": "Discover the abandoned location connected to the Society's past.",
+
+            "category": "Exploration",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "location",
+
+                "location": "old_house"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 2,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "lore",
+
+                "value": "Old House Files"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "forgotten_member",
+
+            "title": "Forgotten Member",
+
+            "description": "Discover what happened to a former member of The Ridge Society.",
+
+            "category": "Character",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "quest",
+
+                "quest": "forgotten_member"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 2,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "character",
+
+                "value": "Lost Member"
+
+            },
+
+            "act": 2,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "act_transition_master",
+
+            "title": "The Next Chapter",
+
+            "description": "Unlock every act in The Ridge Society.",
+
+            "category": "Story",
+
+            "hidden": false,
+
+            "requirements": {
+
+                "type": "acts",
+
+                "amount": 3
+
+            },
+
+            "reward": {
+
+                "type": "progression",
+
+                "value": "Complete Story Access"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "archive_complete",
+
+            "title": "Complete Archive",
+
+            "description": "Collect all available records and documents.",
+
+            "category": "Completion",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "documents",
+
+                "amount": 100
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "bonus",
+
+                "value": "Archive Ending"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+
+
+        {
+            "id": "final_member",
+
+            "title": "The Final Member",
+
+            "description": "Reach the highest possible position within The Ridge Society.",
+
+            "category": "Rank",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "rank",
+
+                "value": "Leader"
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "endingPath",
+
+                "value": "Leader Ending"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        },
+        {
+            "id": "legacy_of_ridge",
+
+            "title": "Legacy Of The Ridge",
+
+            "description": "Complete the entire journey of The Ridge Society.",
+
+            "category": "Ultimate",
+
+            "hidden": true,
+
+            "requirements": {
+
+                "type": "completion",
+
+                "allActs": true,
+
+                "allMajorPaths": true
+
+            },
+
+            "actUnlock": {
+
+                "requiresAct": 3,
+
+                "requiresCompletion": true
+
+            },
+
+            "reward": {
+
+                "type": "special",
+
+                "value": "Legacy Archive"
+
+            },
+
+            "act": 3,
+
+            "unlocked": false
+
+        }
+
+    ],
+
+
+    "actSystem": {
+
+
+        "acts": {
+
+
+            "act1": {
+
+                "name": "The Beginning",
+
+                "unlocked": true,
+
+                "requires": null
+
+            },
+
+
+            "act2": {
+
+                "name": "The Awakening",
+
+                "unlocked": false,
+
+                "requires": {
+
+                    "act": 1,
+
+                    "completion": true
+
+                }
+
+            },
+
+
+            "act3": {
+
+                "name": "The Revelation",
+
+                "unlocked": false,
+
+                "requires": {
+
+                    "act": 2,
+
+                    "completion": true
+
+                }
+
+            }
+
+
+        }
+
+
+    },
+
+
+    "categories": {
+
+
+        "Story": 0,
+
+        "Lore": 0,
+
+        "Exploration": 0,
+
+        "Player": 0,
+
+        "Relationships": 0,
+
+        "Faith": 0,
+
+        "Path": 0,
+
+        "Ending": 0,
+
+        "Completion": 0,
+
+        "Secret": 0,
+
+        "Challenge": 0,
+
+        "Ultimate": 0
+
+
+    },
+
+
+    "statistics": {
+
+
+        "totalAchievements": 0,
+
+        "unlockedAchievements": 0,
+
+        "completionPercentage": 0
+
+
+    },
+
+
+    "settings": {
+
+
+        "showHiddenAchievements": false,
+
+        "trackProgress": true,
+
+        "saveUnlockedStatus": true
+
+
+    },
+
+
+    "versionHistory": {
+
+
+        "version": "0.1",
+
+        "created": "The Ridge Society Development",
+
+        "notes": [
+
+            "Initial achievement database",
+
+            "Act progression system added",
+
+            "Hidden achievements supported",
+
+            "Story path tracking supported"
+
+        ]
+
+
+    }
+
+
+}

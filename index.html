@@ -1,1 +1,2030 @@
+<!DOCTYPE html>
 
+<html lang="en">
+
+
+<head>
+
+
+    <meta charset="UTF-8">
+
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+
+
+    <title>
+
+        The Ridge Society
+
+    </title>
+
+
+
+    <!-- =================================================
+         MAIN MENU STYLES
+    ================================================== -->
+
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+
+    <link
+        rel="stylesheet"
+        href="css/effects.css"
+    >
+
+
+
+</head>
+
+
+
+<body
+    class="main-menu"
+>
+
+
+
+<!-- =====================================================
+     MAIN MENU CONTAINER
+===================================================== -->
+
+
+<div
+    id="main-menu"
+>
+
+
+
+    <!-- =============================================
+         BACKGROUND EFFECTS
+    ============================================== -->
+
+
+    <div
+        id="menu-background"
+    ></div>
+
+
+
+    <div
+        id="menu-static"
+    ></div>
+
+
+
+    <div
+        id="menu-vignette"
+    ></div>
+
+
+
+
+    <!-- =============================================
+         TITLE AREA
+    ============================================== -->
+
+
+    <div
+        id="title-container"
+    >
+
+
+
+        <h1
+            id="game-title"
+        >
+
+            THE RIDGE SOCIETY
+
+        </h1>
+
+
+
+        <p
+            id="game-subtitle"
+        >
+
+            A Story Hidden Beneath The Surface
+
+        </p>
+
+
+
+    </div>
+
+
+
+
+
+    <!-- =============================================
+         MENU BUTTON CONTAINER
+    ============================================== -->
+
+
+    <div
+        id="menu-buttons"
+    >
+
+
+
+        <button
+            id="new-game"
+            class="menu-button"
+        >
+
+            New Game
+
+        </button>
+
+
+
+        <button
+            id="continue-game"
+            class="menu-button"
+        >
+
+            Continue
+
+        </button>
+
+
+
+        <button
+            id="settings"
+            class="menu-button"
+        >
+
+            Settings
+
+        </button>
+
+
+
+        <button
+            id="credits"
+            class="menu-button"
+        >
+
+            Credits
+
+        </button>
+
+
+
+    </div>
+<!-- =====================================================
+     LOADING SCREEN
+===================================================== -->
+
+
+<div
+    id="loading-screen"
+>
+
+
+    <!-- =============================================
+         HELLISH TITLE
+    ============================================== -->
+
+
+    <div
+        id="loading-title-container"
+    >
+
+
+        <h1
+            id="loading-title"
+        >
+
+            THE RIDGE SOCIETY
+
+        </h1>
+
+
+
+        <div
+            id="title-shine"
+        ></div>
+
+
+
+    </div>
+
+
+
+
+    <!-- =============================================
+         LOADING TEXT
+    ============================================== -->
+
+
+    <div
+        id="loading-text"
+    >
+
+        INITIALIZING...
+
+    </div>
+
+
+
+    <div
+        id="loading-bar-container"
+    >
+
+
+        <div
+            id="loading-bar"
+        ></div>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     VHS WARNING SCREEN
+===================================================== -->
+
+
+<div
+    id="warning-screen"
+    class="hidden"
+>
+
+
+    <div
+        id="warning-content"
+    >
+
+
+        <h2>
+
+            WARNING
+
+        </h2>
+
+
+
+        <p>
+
+            THIS EXPERIENCE CONTAINS
+            DISTURBING IMAGERY,
+            LOUD AUDIO,
+            AND HORROR ELEMENTS.
+
+        </p>
+
+
+
+        <button
+            id="accept-warning"
+            class="menu-button"
+        >
+
+            ACCEPT
+
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     BACKGROUND LAYERS
+===================================================== -->
+
+
+<div
+    id="background-layer"
+>
+
+
+    <div
+        id="red-black-gradient"
+    ></div>
+
+
+
+    <div
+        id="fog-layer"
+    ></div>
+
+
+
+    <div
+        id="grain-layer"
+    ></div>
+
+
+
+    <div
+        id="vhs-static-layer"
+    ></div>
+
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     SAVE DETECTION
+===================================================== -->
+
+
+<div
+    id="save-detection"
+    class="hidden"
+>
+
+
+    <p>
+
+        Checking saved data...
+
+    </p>
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     AUDIO INITIALIZATION
+===================================================== -->
+
+
+<div
+    id="audio-loader"
+    class="hidden"
+>
+
+
+    <p>
+
+        Initializing audio system...
+
+    </p>
+
+
+</div>
+<!-- =====================================================
+     MAIN MENU OVERLAY
+===================================================== -->
+
+
+<div
+    id="menu-interface"
+>
+
+
+    <!-- =============================================
+         TITLE HEADER
+    ============================================== -->
+
+
+    <div
+        id="menu-header"
+    >
+
+
+        <h1
+            id="main-title"
+        >
+
+            THE RIDGE SOCIETY
+
+        </h1>
+
+
+
+        <p
+            id="main-subtitle"
+        >
+
+            SOME THINGS SHOULD REMAIN BURIED
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <!-- =============================================
+         BUTTON MENU
+    ============================================== -->
+
+
+    <div
+        id="button-menu"
+    >
+
+
+
+        <button
+
+            id="button-new-game"
+
+            class="menu-button oval-button button-left"
+
+        >
+
+            NEW GAME
+
+        </button>
+
+
+
+
+        <button
+
+            id="button-continue"
+
+            class="menu-button oval-button button-right"
+
+        >
+
+            CONTINUE
+
+        </button>
+
+
+
+
+        <button
+
+            id="button-settings"
+
+            class="menu-button oval-button button-left"
+
+        >
+
+            SETTINGS
+
+        </button>
+
+
+
+
+        <button
+
+            id="button-credits"
+
+            class="menu-button oval-button button-right"
+
+        >
+
+            CREDITS
+
+        </button>
+
+
+
+    </div>
+
+
+
+
+
+    <!-- =============================================
+         VERSION DISPLAY
+    ============================================== -->
+
+
+    <div
+        id="version-display"
+    >
+
+        THE RIDGE SOCIETY
+
+        <br>
+
+        VERSION 0.1 ALPHA
+
+
+    </div>
+
+
+
+
+
+    <!-- =============================================
+         CONTROLLER SUPPORT
+    ============================================== -->
+
+
+    <div
+        id="controller-status"
+        class="hidden"
+    >
+
+        CONTROLLER CONNECTED
+
+
+    </div>
+
+
+
+
+
+    <!-- =============================================
+         SECRET DEVELOPER ACCESS
+    ============================================== -->
+
+
+    <div
+        id="developer-access"
+        class="hidden"
+    >
+
+
+        <button
+            id="developer-button"
+        >
+
+            DEVELOPER MODE
+
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     CRT DISPLAY EFFECT
+===================================================== -->
+
+
+<div
+    id="crt-overlay"
+>
+
+
+    <div
+        id="scanlines"
+    ></div>
+
+
+
+    <div
+        id="screen-flicker"
+    ></div>
+
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     CURSOR EFFECT
+===================================================== -->
+
+
+<div
+    id="menu-cursor"
+>
+
+</div>
+<!-- =====================================================
+     SETTINGS WINDOW
+===================================================== -->
+
+
+<div
+    id="settings-window"
+    class="menu-window hidden"
+>
+
+
+    <div
+        class="window-header"
+    >
+
+        SETTINGS
+
+
+        <button
+            class="close-window"
+            data-close="settings-window"
+        >
+
+            X
+
+        </button>
+
+
+    </div>
+
+
+
+
+    <div
+        class="window-content"
+    >
+
+
+
+        <label>
+
+            MASTER VOLUME
+
+            <input
+
+                type="range"
+
+                id="master-volume"
+
+                min="0"
+
+                max="100"
+
+                value="100"
+
+            >
+
+        </label>
+
+
+
+
+        <label>
+
+            MUSIC VOLUME
+
+            <input
+
+                type="range"
+
+                id="music-volume"
+
+                min="0"
+
+                max="100"
+
+                value="80"
+
+            >
+
+        </label>
+
+
+
+
+        <label>
+
+            SUBTITLES
+
+
+            <input
+
+                type="checkbox"
+
+                id="subtitles"
+
+                checked
+
+            >
+
+
+        </label>
+
+
+
+
+        <label>
+
+            FULLSCREEN
+
+
+            <input
+
+                type="checkbox"
+
+                id="fullscreen"
+
+            >
+
+
+        </label>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     SAVE SELECT WINDOW
+===================================================== -->
+
+
+<div
+    id="save-window"
+    class="menu-window hidden"
+>
+
+
+    <div
+        class="window-header"
+    >
+
+        SELECT SAVE
+
+
+        <button
+            class="close-window"
+            data-close="save-window"
+        >
+
+            X
+
+        </button>
+
+
+    </div>
+
+
+
+
+    <div
+        id="save-slots"
+        class="window-content"
+    >
+
+
+        <button
+            class="save-slot"
+            id="save-slot-1"
+        >
+
+            SLOT 1
+
+            <br>
+
+            EMPTY
+
+
+        </button>
+
+
+
+
+        <button
+            class="save-slot"
+            id="save-slot-2"
+        >
+
+            SLOT 2
+
+            <br>
+
+            EMPTY
+
+
+        </button>
+
+
+
+
+        <button
+            class="save-slot"
+            id="save-slot-3"
+        >
+
+            SLOT 3
+
+            <br>
+
+            EMPTY
+
+
+        </button>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     CREDITS WINDOW
+===================================================== -->
+
+
+<div
+    id="credits-window"
+    class="menu-window hidden"
+>
+
+
+    <div
+        class="window-header"
+    >
+
+        CREDITS
+
+
+        <button
+            class="close-window"
+            data-close="credits-window"
+        >
+
+            X
+
+        </button>
+
+
+    </div>
+
+
+
+
+    <div
+        class="window-content credits-content"
+    >
+
+
+        <h2>
+
+            THE RIDGE SOCIETY
+
+        </h2>
+
+
+
+        <p>
+
+            Created by
+
+        </p>
+
+
+
+        <p>
+
+            ADMIRAL ARMADILLO
+
+        </p>
+
+
+
+        <br>
+
+
+
+        <p>
+
+            VERSION 0.1 ALPHA
+
+        </p>
+
+
+
+        <p>
+
+            A PS1 INSPIRED HORROR EXPERIENCE
+
+        </p>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     STORY DISCLAIMER
+===================================================== -->
+
+
+<div
+    id="story-disclaimer"
+    class="menu-window hidden"
+>
+
+
+    <div
+        class="window-header"
+    >
+
+        NOTICE
+
+
+    </div>
+
+
+
+    <div
+        class="window-content"
+    >
+
+
+        <p>
+
+            THIS STORY IS A WORK OF FICTION.
+
+        </p>
+
+
+
+        <p>
+
+            SOME EVENTS MAY CONTAIN DISTURBING
+            THEMES AND IMAGERY.
+
+        </p>
+
+
+    </div>
+
+
+</div>
+<!-- =====================================================
+     GAME TRANSITION SCREEN
+===================================================== -->
+
+
+<div
+    id="transition-screen"
+    class="hidden"
+>
+
+
+    <div
+        id="transition-fade"
+    ></div>
+
+
+
+    <div
+        id="transition-text"
+    >
+
+        ENTERING THE RIDGE...
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     MENU AUDIO SYSTEM
+===================================================== -->
+
+
+<audio
+
+    id="menu-music"
+
+    loop
+
+>
+
+</audio>
+
+
+
+<audio
+
+    id="button-hover-sound"
+
+>
+
+</audio>
+
+
+
+<audio
+
+    id="button-click-sound"
+
+>
+
+</audio>
+
+
+
+<audio
+
+    id="static-sound"
+
+    loop
+
+>
+
+</audio>
+
+
+
+
+
+<!-- =====================================================
+     GAME LOADING CONNECTION
+===================================================== -->
+
+
+<div
+    id="game-loader"
+    class="hidden"
+>
+
+
+    <div
+        id="loader-title"
+    >
+
+        LOADING
+
+
+    </div>
+
+
+
+    <div
+        id="loader-status"
+    >
+
+        PREPARING EXPERIENCE...
+
+
+    </div>
+
+
+
+    <div
+        id="loader-progress-container"
+    >
+
+
+        <div
+            id="loader-progress"
+        ></div>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     SYSTEM MESSAGE DISPLAY
+===================================================== -->
+
+
+<div
+    id="system-message"
+    class="hidden"
+>
+
+
+    <p
+        id="system-message-text"
+    >
+
+    </p>
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     HIDDEN GAME DATA
+===================================================== -->
+
+
+<div
+    id="game-data"
+    data-version="0.1-alpha"
+    data-engine="ridge-engine"
+    data-style="ps1-horror"
+    class="hidden"
+>
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     JAVASCRIPT FILES
+===================================================== -->
+
+
+<script
+    src="js/dialogue.js"
+></script>
+
+
+
+<script
+    src="js/episode.js"
+></script>
+
+
+
+<script
+    src="js/debug.js"
+></script>
+
+
+
+<script
+    src="js/game.js"
+></script>
+
+
+
+<script
+    src="js/menu.js"
+></script>
+<!-- =====================================================
+     HORROR EFFECT LAYERS
+===================================================== -->
+
+
+<div
+    id="horror-effects"
+>
+
+
+    <!-- VHS DISTORTION -->
+
+
+    <div
+        id="vhs-distortion"
+    ></div>
+
+
+
+    <!-- RED FLASH EFFECT -->
+
+
+    <div
+        id="red-flash"
+    ></div>
+
+
+
+    <!-- SCREEN SHAKE EFFECT -->
+
+
+    <div
+        id="screen-shake"
+    ></div>
+
+
+
+    <!-- STATIC BURSTS -->
+
+
+    <div
+        id="static-burst"
+    ></div>
+
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     SECRET EASTER EGG SYSTEM
+===================================================== -->
+
+
+<div
+    id="secret-container"
+    class="hidden"
+>
+
+
+    <p
+        id="secret-message"
+    >
+
+    </p>
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     DEVELOPER SHORTCUTS
+===================================================== -->
+
+
+<div
+    id="developer-console"
+    class="hidden"
+>
+
+
+    <input
+
+        id="developer-input"
+
+        placeholder="COMMAND..."
+
+    >
+
+
+
+    <div
+        id="developer-output"
+    ></div>
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     MOBILE FALLBACK
+===================================================== -->
+
+
+<div
+    id="mobile-controls"
+    class="hidden"
+>
+
+
+    <button
+        id="mobile-up"
+    >
+
+        ▲
+
+    </button>
+
+
+
+    <button
+        id="mobile-down"
+    >
+
+        ▼
+
+    </button>
+
+
+
+    <button
+        id="mobile-left"
+    >
+
+        ◀
+
+    </button>
+
+
+
+    <button
+        id="mobile-right"
+    >
+
+        ▶
+
+    </button>
+
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     ACCESSIBILITY
+===================================================== -->
+
+
+<div
+    id="accessibility-options"
+    class="hidden"
+>
+
+
+    <button
+        id="reduce-effects"
+    >
+
+        REDUCE EFFECTS
+
+    </button>
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     FINAL BODY WRAPPER CLOSE
+===================================================== -->
+
+
+</div>
+<!-- =====================================================
+     PROLOGUE INTRO SYSTEM
+===================================================== -->
+
+
+<div
+    id="prologue-screen"
+    class="hidden"
+>
+
+
+    <!-- BACKGROUND -->
+
+    <div
+        id="prologue-background"
+    ></div>
+
+
+
+    <!-- VHS FILTER -->
+
+    <div
+        id="prologue-static"
+    ></div>
+
+
+
+
+
+    <!-- TITLE -->
+
+    <div
+        id="prologue-title"
+    >
+
+        THE RIDGE SOCIETY
+
+    </div>
+
+
+
+
+
+    <!-- STORY TEXT -->
+
+    <div
+        id="prologue-text"
+    >
+
+
+        <p
+            id="prologue-line"
+        >
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <!-- DATE DISPLAY -->
+
+    <div
+        id="prologue-date"
+    >
+
+    </div>
+
+
+
+
+
+    <!-- SKIP BUTTON -->
+
+    <button
+
+        id="skip-prologue"
+
+        class="menu-button oval-button"
+
+    >
+
+        SKIP PROLOGUE
+
+    </button>
+
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     PROLOGUE AUDIO
+===================================================== -->
+
+
+<audio
+
+    id="prologue-music"
+
+    loop
+
+>
+
+</audio>
+
+
+
+<audio
+
+    id="prologue-static-audio"
+
+>
+
+</audio>
+
+
+
+
+
+<!-- =====================================================
+     NEW GAME FLOW DATA
+===================================================== -->
+
+
+<div
+    id="story-data"
+    class="hidden"
+
+
+    data-intro="true"
+
+    data-prologue="cult-origin"
+
+    data-start-area="chapter-one"
+
+
+>
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     MENU SCRIPT CONNECTIONS
+===================================================== -->
+
+
+<script>
+
+
+/*
+
+    MENU FLOW:
+
+    NEW GAME
+        |
+        v
+    PROLOGUE
+        |
+        v
+    GAME.HTML
+
+
+*/
+
+
+document
+.getElementById(
+    "button-new-game"
+)
+?.addEventListener(
+
+    "click",
+
+    function(){
+
+
+        startPrologue();
+
+
+    }
+
+);
+
+
+
+function startPrologue(){
+
+
+    document
+    .getElementById(
+        "menu-interface"
+    )
+    .classList
+    .add(
+        "hidden"
+    );
+
+
+
+    document
+    .getElementById(
+        "prologue-screen"
+    )
+    .classList
+    .remove(
+        "hidden"
+    );
+
+
+}
+
+
+
+</script>
+<!-- =====================================================
+     CONTINUE GAME SYSTEM
+===================================================== -->
+
+
+<script>
+
+
+function continueGame(){
+
+
+
+    let save =
+
+    localStorage.getItem(
+
+        "ridge_society_autosave"
+
+    );
+
+
+
+    if(
+        save
+    ){
+
+
+        beginGameTransition(
+            "continue"
+        );
+
+
+    }
+
+    else{
+
+
+        showSystemMessage(
+
+            "NO SAVED DATA FOUND."
+
+        );
+
+
+    }
+
+
+}
+
+
+
+
+
+document
+.getElementById(
+    "button-continue"
+)
+?.addEventListener(
+
+    "click",
+
+    function(){
+
+
+        continueGame();
+
+
+    }
+
+);
+
+
+
+
+
+// =====================================================
+// PROLOGUE FINISH
+// =====================================================
+
+
+function finishPrologue(){
+
+
+
+    document
+
+    .getElementById(
+
+        "prologue-screen"
+
+    )
+
+    .classList
+
+    .add(
+
+        "hidden"
+
+    );
+
+
+
+    beginGameTransition(
+
+        "new"
+
+    );
+
+
+}
+
+
+
+
+
+document
+
+.getElementById(
+
+    "skip-prologue"
+
+)
+
+?.addEventListener(
+
+    "click",
+
+    function(){
+
+
+
+        finishPrologue();
+
+
+
+    }
+
+);
+
+
+
+
+
+// =====================================================
+// GAME TRANSITION
+// =====================================================
+
+
+function beginGameTransition(
+    type
+){
+
+
+
+    let screen =
+
+    document
+
+    .getElementById(
+
+        "transition-screen"
+
+    );
+
+
+
+    screen
+
+    .classList
+
+    .remove(
+
+        "hidden"
+
+    );
+
+
+
+    let text =
+
+    document
+
+    .getElementById(
+
+        "transition-text"
+
+    );
+
+
+
+    if(
+        type === "new"
+    ){
+
+        text.textContent =
+
+        "ENTERING THE RIDGE...";
+
+
+    }
+
+    else{
+
+
+        text.textContent =
+
+        "RESTORING MEMORY...";
+
+
+    }
+
+
+
+
+
+    setTimeout(
+
+        function(){
+
+
+
+            window.location.href =
+
+            "game.html";
+
+
+
+        },
+
+        3000
+
+    );
+
+
+}
+
+
+
+
+
+// =====================================================
+// SYSTEM MESSAGE
+// =====================================================
+
+
+function showSystemMessage(
+    message
+){
+
+
+
+    let box =
+
+    document
+
+    .getElementById(
+
+        "system-message"
+
+    );
+
+
+
+    let text =
+
+    document
+
+    .getElementById(
+
+        "system-message-text"
+
+    );
+
+
+
+    if(
+        box &&
+        text
+    ){
+
+
+        text.textContent =
+
+        message;
+
+
+
+        box
+
+        .classList
+
+        .remove(
+
+            "hidden"
+
+        );
+
+
+
+        setTimeout(
+
+            function(){
+
+
+                box
+
+                .classList
+
+                .add(
+
+                    "hidden"
+
+                );
+
+
+            },
+
+            3000
+
+        );
+
+
+    }
+
+
+}
+
+
+
+
+
+// =====================================================
+// MENU INITIALIZATION
+// =====================================================
+
+
+window.addEventListener(
+
+    "load",
+
+    function(){
+
+
+
+        console.log(
+
+            "The Ridge Society launcher initialized."
+
+        );
+
+
+
+        let save =
+
+        localStorage.getItem(
+
+            "ridge_society_autosave"
+
+        );
+
+
+
+        if(
+            save
+        ){
+
+
+            document
+
+            .getElementById(
+
+                "button-continue"
+
+            )
+
+            ?.classList
+
+            .remove(
+
+                "disabled"
+
+            );
+
+
+        }
+
+
+
+    }
+
+);
+
+
+
+</script>
+
+
+
+
+
+</body>
+
+
+</html>

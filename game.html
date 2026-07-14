@@ -1,1 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        The Ridge Society
+    </title>
+
+    <!-- Stylesheets -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/dialogue.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/effects.css"
+    >
+
+</head>
+
+<body class="ps1-display">
+
+<!-- ======================================================
+     LOADING SCREEN
+====================================================== -->
+
+<div id="loading-screen">
+
+    <div id="loading-logo">
+
+        THE RIDGE SOCIETY
+
+    </div>
+
+    <div id="loading-text">
+
+        Loading...
+
+    </div>
+
+    <div id="loading-bar">
+
+        <div id="loading-progress"></div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     GAME CONTAINER
+====================================================== -->
+
+<div id="game-container">
+
+    <!-- Main Game Canvas -->
+
+    <canvas
+        id="game-canvas"
+        width="1280"
+        height="720"
+    ></canvas>
+
+</div>
+
+
+<!-- ======================================================
+     SCREEN OVERLAYS
+====================================================== -->
+
+<div id="screen-overlay"></div>
+
+<div id="fade-overlay"></div>
+
+<div id="flash-overlay"></div>
+
+
+<!-- ======================================================
+     VERSION DISPLAY
+====================================================== -->
+
+<div id="game-version">
+
+    Version 0.1 Alpha
+
+</div>
+
+<!-- ======================================================
+     PLAYER HUD
+====================================================== -->
+
+<div id="hud">
+
+    <!-- Health -->
+
+    <div class="hud-panel" id="health-panel">
+
+        <div class="hud-title">
+
+            HEALTH
+
+        </div>
+
+        <div class="status-bar">
+
+            <div
+                id="health-bar"
+                class="status-fill"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Stamina -->
+
+    <div class="hud-panel" id="stamina-panel">
+
+        <div class="hud-title">
+
+            STAMINA
+
+        </div>
+
+        <div class="status-bar">
+
+            <div
+                id="stamina-bar"
+                class="status-fill"
+            ></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ======================================================
+     STORY INFORMATION
+====================================================== -->
+
+<div id="story-info">
+
+    <div id="current-act">
+
+        Act 1
+
+    </div>
+
+    <div id="current-episode">
+
+        Episode 1
+
+    </div>
+
+</div>
+
+
+
+<!-- ======================================================
+     OBJECTIVE TRACKER
+====================================================== -->
+
+<div id="objective-container">
+
+    <div id="objective-title">
+
+        Current Objective
+
+    </div>
+
+    <div id="objective-text">
+
+        Explore the Society.
+
+    </div>
+
+</div>
+
+
+
+<!-- ======================================================
+     INTERACTION PROMPT
+====================================================== -->
+
+<div id="interaction-prompt">
+
+    <span class="key">
+
+        E
+
+    </span>
+
+    <span class="prompt-text">
+
+        Interact
+
+    </span>
+
+</div>
+
+<!-- ======================================================
+     DIALOGUE INTERFACE
+====================================================== -->
+
+<div id="dialogue-container" class="hidden">
+
+    <!-- Character Portrait -->
+
+    <div id="dialogue-portrait">
+
+        <img
+            id="portrait-image"
+            src="assets/portraits/default.png"
+            alt="Character Portrait"
+        >
+
+    </div>
+
+
+    <!-- Dialogue Content -->
+
+    <div id="dialogue-content">
+
+        <div id="speaker-name">
+
+            Unknown
+
+        </div>
+
+        <div id="dialogue-text">
+
+            ...
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ======================================================
+     DIALOGUE CHOICES
+====================================================== -->
+
+<div
+    id="dialogue-choices"
+    class="hidden"
+>
+
+    <button
+        class="choice-button"
+        id="choice-1"
+    >
+
+        Choice 1
+
+    </button>
+
+    <button
+        class="choice-button"
+        id="choice-2"
+    >
+
+        Choice 2
+
+    </button>
+
+    <button
+        class="choice-button"
+        id="choice-3"
+    >
+
+        Choice 3
+
+    </button>
+
+    <button
+        class="choice-button"
+        id="choice-4"
+    >
+
+        Choice 4
+
+    </button>
+
+</div>
+
+
+
+<!-- ======================================================
+     DIALOGUE CONTROLS
+====================================================== -->
+
+<div id="dialogue-controls">
+
+    <button
+        id="continue-dialogue"
+    >
+
+        Continue
+
+    </button>
+
+    <button
+        id="skip-dialogue"
+    >
+
+        Skip
+
+    </button>
+
+</div>
+
+
+
+<!-- ======================================================
+     SUBTITLE DISPLAY
+====================================================== -->
+
+<div id="subtitle-container">
+
+    <span id="subtitle-text">
+
+    </span>
+
+</div>
+<!-- ======================================================
+     PAUSE MENU
+====================================================== -->
+
+<div
+    id="pause-menu"
+    class="menu hidden"
+>
+
+    <!-- ==============================================
+         MENU TITLE
+    =============================================== -->
+
+    <div
+        id="pause-title"
+        class="menu-title"
+    >
+
+        GAME PAUSED
+
+    </div>
+
+
+
+    <!-- ==============================================
+         MENU BUTTONS
+    =============================================== -->
+
+    <div
+        id="pause-buttons"
+        class="menu-buttons"
+    >
+
+        <button
+            id="resume-button"
+            class="menu-button"
+        >
+
+            Resume Game
+
+        </button>
+
+
+
+        <button
+            id="save-button"
+            class="menu-button"
+        >
+
+            Save Game
+
+        </button>
+
+
+
+        <button
+            id="load-button"
+            class="menu-button"
+        >
+
+            Load Game
+
+        </button>
+
+
+
+        <button
+            id="settings-button"
+            class="menu-button"
+        >
+
+            Settings
+
+        </button>
+
+
+
+        <button
+            id="controls-button"
+            class="menu-button"
+        >
+
+            Controls
+
+        </button>
+
+
+
+        <button
+            id="credits-button"
+            class="menu-button"
+        >
+
+            Credits
+
+        </button>
+
+
+
+        <button
+            id="quit-button"
+            class="menu-button danger"
+        >
+
+            Quit To Main Menu
+
+        </button>
+
+    </div>
+
+
+
+    <!-- ==============================================
+         SAVE STATUS
+    =============================================== -->
+
+    <div
+        id="save-status"
+        class="menu-footer"
+    >
+
+        No recent save.
+
+    </div>
+
+</div>
+
+
+
+<!-- ======================================================
+     PAUSE MENU BACKGROUND
+====================================================== -->
+
+<div
+    id="pause-background"
+    class="hidden"
+></div>
+
+
+
+<!-- ======================================================
+     CONFIRMATION WINDOW
+====================================================== -->
+
+<div
+    id="confirmation-window"
+    class="hidden"
+>
+
+    <div
+        class="confirmation-title"
+    >
+
+        Confirmation
+
+    </div>
+
+
+
+    <div
+        id="confirmation-text"
+    >
+
+        Are you sure?
+
+    </div>
+
+
+
+    <div
+        class="confirmation-buttons"
+    >
+
+        <button
+            id="confirm-yes"
+        >
+
+            Yes
+
+        </button>
+
+
+
+        <button
+            id="confirm-no"
+        >
+
+            No
+
+        </button>
+
+    </div>
+
+</div>
+<!-- ======================================================
+     VISUAL EFFECTS LAYERS
+====================================================== -->
+
+<div
+    id="visual-effects"
+>
+
+    <!-- ==============================================
+         CRT OVERLAY
+    =============================================== -->
+
+    <div
+        id="crt-overlay"
+        class="effect-layer"
+    ></div>
+
+
+
+    <!-- ==============================================
+         VHS STATIC
+    =============================================== -->
+
+    <div
+        id="vhs-static"
+        class="effect-layer"
+    ></div>
+
+
+
+    <!-- ==============================================
+         FILM GRAIN
+    =============================================== -->
+
+    <div
+        id="film-grain"
+        class="effect-layer"
+    ></div>
+
+
+
+    <!-- ==============================================
+         SCREEN GLITCHES
+    =============================================== -->
+
+    <div
+        id="glitch-overlay"
+        class="effect-layer"
+    ></div>
+
+
+
+    <!-- ==============================================
+         BLOOM / LIGHTING
+    =============================================== -->
+
+    <div
+        id="lighting-overlay"
+        class="effect-layer"
+    ></div>
+
+
+
+    <!-- ==============================================
+         FOG
+    =============================================== -->
+
+    <div
+        id="fog-overlay"
+        class="effect-layer"
+    ></div>
+
+
+
+    <!-- ==============================================
+         CAMERA SHAKE LAYER
+    =============================================== -->
+
+    <div
+        id="camera-layer"
+    >
+
+    </div>
+
+
+
+    <!-- ==============================================
+         BLOOD FLASH
+    =============================================== -->
+
+    <div
+        id="damage-overlay"
+        class="effect-layer"
+    ></div>
+
+</div>
+
+
+
+<!-- ======================================================
+     CUTSCENE BARS
+====================================================== -->
+
+<div
+    id="letterbox-top"
+    class="letterbox"
+></div>
+
+<div
+    id="letterbox-bottom"
+    class="letterbox"
+></div>
+
+
+
+<!-- ======================================================
+     SCREEN FLASHES
+====================================================== -->
+
+<div
+    id="white-flash"
+></div>
+
+<div
+    id="black-flash"
+></div>
+
+<div
+    id="red-flash"
+></div>
+
+
+
+<!-- ======================================================
+     TRANSITION SCREEN
+====================================================== -->
+
+<div
+    id="transition-screen"
+>
+
+    <div
+        id="transition-text"
+    >
+
+        Loading Area...
+
+    </div>
+
+</div>
+<!-- ======================================================
+     DEVELOPER PANEL
+====================================================== -->
+
+<div
+    id="developer-panel"
+    class="hidden"
+>
+
+    <!-- ==============================================
+         PANEL HEADER
+    =============================================== -->
+
+    <div
+        id="developer-title"
+        class="window-title"
+    >
+
+        Developer Console
+
+    </div>
+
+
+
+    <!-- ==============================================
+         LIVE DEBUG INFORMATION
+    =============================================== -->
+
+    <div
+        id="developer-information"
+    >
+
+        <div class="debug-row">
+
+            <strong>FPS</strong>
+
+            <span id="debug-fps">
+
+                60
+
+            </span>
+
+        </div>
+
+
+
+        <div class="debug-row">
+
+            <strong>Coordinates</strong>
+
+            <span id="debug-coordinates">
+
+                X: 0 | Y: 0
+
+            </span>
+
+        </div>
+
+
+
+        <div class="debug-row">
+
+            <strong>Current Act</strong>
+
+            <span id="debug-act">
+
+                Act 1
+
+            </span>
+
+        </div>
+
+
+
+        <div class="debug-row">
+
+            <strong>Episode</strong>
+
+            <span id="debug-episode">
+
+                Episode 1
+
+            </span>
+
+        </div>
+
+
+
+        <div class="debug-row">
+
+            <strong>Current Area</strong>
+
+            <span id="debug-area">
+
+                Unknown
+
+            </span>
+
+        </div>
+
+
+
+        <div class="debug-row">
+
+            <strong>Dialogue</strong>
+
+            <span id="debug-dialogue">
+
+                None
+
+            </span>
+
+        </div>
+
+
+
+        <div class="debug-row">
+
+            <strong>Cutscene</strong>
+
+            <span id="debug-cutscene">
+
+                None
+
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==============================================
+         DEBUG LOG OUTPUT
+    =============================================== -->
+
+    <div
+        id="debug-log-window"
+    >
+
+    </div>
+
+
+
+    <!-- ==============================================
+         QUICK ACTION BUTTONS
+    =============================================== -->
+
+    <div
+        id="developer-buttons"
+    >
+
+        <button
+            id="debug-unlock"
+        >
+
+            Unlock Everything
+
+        </button>
+
+
+
+        <button
+            id="debug-cutscene"
+        >
+
+            Play Test Cutscene
+
+        </button>
+
+
+
+        <button
+            id="debug-godmode"
+        >
+
+            Toggle God Mode
+
+        </button>
+
+
+
+        <button
+            id="debug-collision"
+        >
+
+            Toggle Collision
+
+        </button>
+
+
+
+        <button
+            id="debug-overlay"
+        >
+
+            Toggle Debug Overlay
+
+        </button>
+
+
+
+        <button
+            id="debug-clear-log"
+        >
+
+            Clear Log
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- ======================================================
+     FPS DISPLAY
+====================================================== -->
+
+<div
+    id="fps-counter"
+    class="hidden"
+>
+
+    FPS: 60
+
+</div>
+
+
+
+<!-- ======================================================
+     BUILD INFORMATION
+====================================================== -->
+
+<div
+    id="build-information"
+    class="hidden"
+>
+
+    The Ridge Society
+
+    <br>
+
+    Version 0.1 Alpha
+
+    <br>
+
+    Development Build
+
+</div>
+<!-- ======================================================
+     JAVASCRIPT SYSTEMS
+====================================================== -->
+
+<!-- ==============================================
+     CORE GAME SYSTEMS
+============================================== -->
+
+<script src="js/audio.js"></script>
+
+<script src="js/collision.js"></script>
+
+<script src="js/cutscene.js"></script>
+
+<script src="js/debug.js"></script>
+
+<script src="js/dialogue.js"></script>
+
+<script src="js/episode.js"></script>
+
+<script src="js/game.js"></script>
+
+
+
+<!-- ==============================================
+     GAME DATA
+============================================== -->
+
+<script src="data/dialogue.json"></script>
+
+<script src="data/episodes.json"></script>
+
+
+
+<!-- ==============================================
+     OPTIONAL SYSTEMS
+============================================== -->
+
+<script src="js/input.js"></script>
+
+<script src="js/inventory.js"></script>
+
+<script src="js/items.js"></script>
+
+<script src="js/map.js"></script>
+
+<script src="js/objectives.js"></script>
+
+<script src="js/player.js"></script>
+
+<script src="js/render.js"></script>
+
+<script src="js/save.js"></script>
+
+<script src="js/settings.js"></script>
+
+
+
+<!-- ==============================================
+     STARTUP SCRIPT
+============================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        console.log(
+            "===================================="
+        );
+
+        console.log(
+            "THE RIDGE SOCIETY"
+        );
+
+        console.log(
+            "Version 0.1 Alpha"
+        );
+
+        console.log(
+            "Development Build"
+        );
+
+        console.log(
+            "===================================="
+        );
+
+
+
+        if(
+            typeof DebugSystem !== "undefined"
+        ){
+
+            DebugSystem.log(
+                "HTML initialized."
+            );
+
+        }
+
+
+
+        if(
+            typeof EpisodeSystem !== "undefined"
+        ){
+
+            EpisodeSystem.updateUnlocks();
+
+        }
+
+
+
+        if(
+            typeof CutsceneSystem !== "undefined"
+        ){
+
+            console.log(
+                "Cutscene System Ready"
+            );
+
+        }
+
+
+
+        if(
+            typeof DialogueSystem !== "undefined"
+        ){
+
+            console.log(
+                "Dialogue System Ready"
+            );
+
+        }
+
+
+
+        console.log(
+            "Game startup complete."
+        );
+
+    }
+);
+
+</script>
+<!-- ======================================================
+     BOOT INTERFACE
+====================================================== -->
+
+<div
+    id="boot-interface"
+>
+
+    <!-- ==============================================
+         GAME TITLE
+    =============================================== -->
+
+    <div
+        id="boot-logo"
+    >
+
+        THE RIDGE SOCIETY
+
+    </div>
+
+
+
+    <!-- ==============================================
+         START MENU
+    =============================================== -->
+
+    <div
+        id="boot-menu"
+    >
+
+        <button
+            id="new-game-button"
+            class="boot-button"
+        >
+
+            New Game
+
+        </button>
+
+
+
+        <button
+            id="continue-game-button"
+            class="boot-button"
+        >
+
+            Continue
+
+        </button>
+
+
+
+        <button
+            id="boot-settings-button"
+            class="boot-button"
+        >
+
+            Settings
+
+        </button>
+
+
+
+        <button
+            id="boot-credits-button"
+            class="boot-button"
+        >
+
+            Credits
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- ======================================================
+     SAVE SLOT WINDOW
+====================================================== -->
+
+<div
+    id="save-slot-window"
+    class="window hidden"
+>
+
+    <div
+        class="window-title"
+    >
+
+        Select Save Slot
+
+    </div>
+
+
+
+    <div
+        id="save-slot-list"
+    >
+
+        <button
+            class="save-slot"
+            id="save-slot-1"
+        >
+
+            Slot 1
+
+        </button>
+
+
+
+        <button
+            class="save-slot"
+            id="save-slot-2"
+        >
+
+            Slot 2
+
+        </button>
+
+
+
+        <button
+            class="save-slot"
+            id="save-slot-3"
+        >
+
+            Slot 3
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- ======================================================
+     BOOT STATUS
+====================================================== -->
+
+<div
+    id="boot-status"
+    class="hidden"
+>
+
+    Initializing Systems...
+
+</div>
+
+
+
+<!-- ======================================================
+     INTRO TRANSITION
+====================================================== -->
+
+<div
+    id="intro-transition"
+    class="hidden"
+>
+
+    <div
+        id="intro-text"
+    >
+
+        Welcome to The Ridge Society
+
+    </div>
+
+</div>
+
+
+
+<!-- ======================================================
+     CUSTOM CURSOR LAYER
+====================================================== -->
+
+<div
+    id="cursor-layer"
+>
+
+    <div
+        id="custom-cursor"
+    ></div>
+
+</div>
+<!-- ======================================================
+     FUTURE SYSTEM PLACEHOLDERS
+====================================================== -->
+
+<div
+    id="system-placeholders"
+    class="hidden"
+>
+
+    <!-- ==============================================
+         INVENTORY RENDER TARGET
+    =============================================== -->
+
+    <div
+        id="inventory-render-target"
+    ></div>
+
+
+
+    <!-- ==============================================
+         NPC RENDER TARGET
+    =============================================== -->
+
+    <div
+        id="npc-render-target"
+    ></div>
+
+
+
+    <!-- ==============================================
+         PARTICLE RENDER TARGET
+    =============================================== -->
+
+    <div
+        id="particle-render-target"
+    ></div>
+
+
+
+    <!-- ==============================================
+         DYNAMIC LIGHT TARGET
+    =============================================== -->
+
+    <div
+        id="lighting-render-target"
+    ></div>
+
+
+
+    <!-- ==============================================
+         FUTURE MULTIPLAYER TARGET
+         (Reserved)
+    =============================================== -->
+
+    <div
+        id="network-render-target"
+    ></div>
+
+</div>
+
+
+
+<!-- ======================================================
+     ACCESSIBILITY STATUS
+====================================================== -->
+
+<div
+    id="game-status"
+    aria-live="polite"
+    class="hidden"
+>
+
+    Game Ready
+
+</div>
+
+
+
+<!-- ======================================================
+     NOSCRIPT MESSAGE
+====================================================== -->
+
+<noscript>
+
+    <div
+        id="javascript-required"
+    >
+
+        <h2>
+
+            JavaScript Required
+
+        </h2>
+
+        <p>
+
+            The Ridge Society requires JavaScript to run.
+            Please enable JavaScript in your browser and reload
+            the page.
+
+        </p>
+
+    </div>
+
+</noscript>
+
+
+
+<!-- ======================================================
+     END OF GAME PAGE
+====================================================== -->
+
+</body>
+
+</html>

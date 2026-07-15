@@ -1,1 +1,1622 @@
+/* =====================================================
+   THE RIDGE SOCIETY
+   INVENTORY STYLE SHEET
+   VERSION 0.1 ALPHA
+===================================================== */
 
+
+
+/* =====================================================
+   INVENTORY CONTAINER
+===================================================== */
+
+
+#inventory-screen
+{
+
+    position: fixed;
+
+    width: 100%;
+
+    height: 100%;
+
+
+    top: 0;
+
+    left: 0;
+
+
+    background:
+
+    rgba(
+
+        0,
+
+        0,
+
+        0,
+
+        0.85
+
+    );
+
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+
+    z-index: 50;
+
+
+}
+
+
+
+
+
+/* =====================================================
+   INVENTORY WINDOW
+===================================================== */
+
+
+#inventory-window
+{
+
+    width: 700px;
+
+    min-height: 450px;
+
+
+    background:
+
+    linear-gradient(
+
+        145deg,
+
+        #240000,
+
+        #050000
+
+    );
+
+
+    border:
+
+    3px solid
+
+    #8b0000;
+
+
+    box-shadow:
+
+    0 0 20px
+
+    black,
+
+    0 0 40px
+
+    darkred;
+
+
+    padding: 30px;
+
+
+}
+
+
+
+
+
+/* =====================================================
+   INVENTORY TITLE
+===================================================== */
+
+
+#inventory-title
+{
+
+    text-align: center;
+
+
+    font-family:
+
+    "PixelOperator",
+
+    monospace;
+
+
+    font-size: 32px;
+
+
+    color:
+
+    #ff3333;
+
+
+    letter-spacing:
+
+    5px;
+
+
+    text-shadow:
+
+    0 0 10px red;
+
+
+    margin-bottom: 25px;
+
+
+}
+
+
+
+
+
+/* =====================================================
+   ITEM GRID
+===================================================== */
+
+
+#inventory-grid
+{
+
+    display:
+
+    grid;
+
+
+    grid-template-columns:
+
+    repeat(
+
+        5,
+
+        1fr
+
+    );
+
+
+    gap:
+
+    15px;
+
+
+}
+
+
+
+
+
+/* =====================================================
+   ITEM SLOT
+===================================================== */
+
+
+.inventory-slot
+{
+
+    width: 90px;
+
+    height: 90px;
+
+
+    background:
+
+    rgba(
+
+        20,
+
+        0,
+
+        0,
+
+        0.9
+
+    );
+
+
+    border:
+
+    2px solid
+
+    #550000;
+
+
+    display:
+
+    flex;
+
+
+    justify-content:
+
+    center;
+
+
+    align-items:
+
+    center;
+
+
+    transition:
+
+    0.2s;
+
+
+}
+
+
+
+
+
+.inventory-slot:hover
+{
+
+    border-color:
+
+    red;
+
+
+    box-shadow:
+
+    0 0 15px red;
+
+
+    transform:
+
+    scale(1.08);
+
+
+}
+/* =====================================================
+   SELECTED ITEM
+===================================================== */
+
+
+.inventory-slot.selected
+{
+
+    border:
+
+    3px solid
+
+    #ff0000;
+
+
+    background:
+
+    rgba(
+
+        80,
+
+        0,
+
+        0,
+
+        0.8
+
+    );
+
+
+    box-shadow:
+
+    0 0 20px
+
+    red;
+
+
+
+    animation:
+
+    itemPulse
+
+    1.5s
+
+    infinite;
+
+
+}
+
+
+
+
+
+@keyframes itemPulse
+{
+
+    0%
+
+    {
+
+        box-shadow:
+
+        0 0 10px
+
+        red;
+
+    }
+
+
+    50%
+
+    {
+
+        box-shadow:
+
+        0 0 30px
+
+        crimson;
+
+    }
+
+
+    100%
+
+    {
+
+        box-shadow:
+
+        0 0 10px
+
+        red;
+
+    }
+
+}
+
+
+
+
+
+/* =====================================================
+   EMPTY SLOT
+===================================================== */
+
+
+.inventory-slot.empty
+{
+
+    opacity:
+
+    0.4;
+
+
+    border-style:
+
+    dashed;
+
+
+}
+
+
+
+
+
+/* =====================================================
+   ITEM ICON
+===================================================== */
+
+
+.item-icon
+{
+
+    width:
+
+    60px;
+
+
+    height:
+
+    60px;
+
+
+    image-rendering:
+
+    pixelated;
+
+
+}
+
+
+
+
+
+/* =====================================================
+   ITEM DESCRIPTION PANEL
+===================================================== */
+
+
+#item-description
+{
+
+    margin-top:
+
+    25px;
+
+
+    padding:
+
+    20px;
+
+
+    min-height:
+
+    100px;
+
+
+
+    background:
+
+    rgba(
+
+        0,
+
+        0,
+
+        0,
+
+        0.7
+
+    );
+
+
+
+    border-left:
+
+    4px solid
+
+    darkred;
+
+
+
+}
+
+
+
+
+
+#item-name
+{
+
+    font-family:
+
+    "PixelOperator",
+
+    monospace;
+
+
+
+    color:
+
+    #ff4444;
+
+
+    font-size:
+
+    24px;
+
+
+}
+
+
+
+
+
+#item-text
+{
+
+    margin-top:
+
+    10px;
+
+
+
+    color:
+
+    #cccccc;
+
+
+    line-height:
+
+    1.5;
+
+
+}
+
+
+
+
+
+/* =====================================================
+   QUEST ITEMS
+===================================================== */
+
+
+.quest-item
+{
+
+    border-color:
+
+    #aa0000;
+
+
+    box-shadow:
+
+    inset 0 0 10px
+
+    red;
+
+
+}
+
+
+
+
+
+/* =====================================================
+   KEY ITEMS
+===================================================== */
+
+
+.key-item
+{
+
+    border-color:
+
+    #660000;
+
+
+    background:
+
+    linear-gradient(
+
+        145deg,
+
+        #330000,
+
+        #090000
+
+    );
+
+
+}
+
+
+
+
+
+/* =====================================================
+   INVENTORY GLITCH EFFECT
+===================================================== */
+
+
+.inventory-glitch
+{
+
+    animation:
+
+    inventoryGlitch
+
+    0.15s
+
+    infinite;
+
+
+}
+
+
+
+
+
+@keyframes inventoryGlitch
+{
+
+
+    0%
+
+    {
+
+        transform:
+
+        translateX(0);
+
+    }
+
+
+    50%
+
+    {
+
+        transform:
+
+        translateX(3px);
+
+    }
+
+
+    100%
+
+    {
+
+        transform:
+
+        translateX(-3px);
+
+    }
+
+
+}
+
+
+
+
+
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
+
+
+.inventory-close
+{
+
+    position:
+
+    absolute;
+
+
+    top:
+
+    20px;
+
+
+    right:
+
+    25px;
+
+
+
+    background:
+
+    black;
+
+
+    color:
+
+    red;
+
+
+    border:
+
+    2px solid
+
+    darkred;
+
+
+
+    font-family:
+
+    monospace;
+
+
+
+    padding:
+
+    8px 15px;
+
+
+    cursor:
+
+    pointer;
+
+
+}
+
+
+
+
+
+.inventory-close:hover
+{
+
+    background:
+
+    darkred;
+
+
+    color:
+
+    white;
+
+
+}
+/* =====================================================
+   INVENTORY OPEN ANIMATION
+===================================================== */
+
+
+#inventory-screen.opening
+{
+
+    animation:
+
+    inventoryFadeIn
+
+    0.6s
+
+    ease forwards;
+
+
+}
+
+
+
+
+
+@keyframes inventoryFadeIn
+{
+
+
+    from
+
+    {
+
+        opacity:
+
+        0;
+
+
+        filter:
+
+        brightness(0);
+
+    }
+
+
+
+    to
+
+    {
+
+        opacity:
+
+        1;
+
+
+        filter:
+
+        brightness(1);
+
+    }
+
+
+}
+
+
+
+
+
+/* =====================================================
+   INVENTORY WINDOW ENTRY
+===================================================== */
+
+
+#inventory-window
+{
+
+    animation:
+
+    inventoryAppear
+
+    0.5s
+
+    ease-out;
+
+
+}
+
+
+
+
+
+@keyframes inventoryAppear
+{
+
+
+    from
+
+    {
+
+        transform:
+
+        scale(0.8)
+
+        translateY(40px);
+
+
+
+        opacity:
+
+        0;
+
+
+    }
+
+
+
+    to
+
+    {
+
+        transform:
+
+        scale(1)
+
+        translateY(0);
+
+
+
+        opacity:
+
+        1;
+
+
+    }
+
+
+}
+
+
+
+
+
+/* =====================================================
+   CONTROLLER SELECTOR
+===================================================== */
+
+
+.controller-selector
+{
+
+    position:
+
+    absolute;
+
+
+
+    width:
+
+    8px;
+
+
+    height:
+
+    8px;
+
+
+    background:
+
+    red;
+
+
+
+    box-shadow:
+
+    0 0 10px
+
+    red;
+
+
+
+    animation:
+
+    selectorBlink
+
+    1s
+
+    infinite;
+
+
+}
+
+
+
+
+
+@keyframes selectorBlink
+{
+
+
+    0%,
+
+    100%
+
+    {
+
+        opacity:
+
+        1;
+
+    }
+
+
+
+    50%
+
+    {
+
+        opacity:
+
+        0.2;
+
+    }
+
+
+}
+
+
+
+
+
+/* =====================================================
+   VHS COMPATIBILITY
+===================================================== */
+
+
+#inventory-screen.vhs-mode
+{
+
+    filter:
+
+    contrast(1.2)
+
+    brightness(0.9);
+
+
+}
+
+
+
+
+
+#inventory-screen.vhs-mode::after
+{
+
+    content:
+
+    "";
+
+
+    position:
+
+    absolute;
+
+
+    inset:
+
+    0;
+
+
+
+    pointer-events:
+
+    none;
+
+
+
+    background:
+
+    repeating-linear-gradient(
+
+        to bottom,
+
+        rgba(
+
+            255,
+
+            255,
+
+            255,
+
+            0.03
+
+        )
+
+        0px,
+
+
+        rgba(
+
+            255,
+
+            255,
+
+            255,
+
+            0.03
+
+        )
+
+        2px,
+
+
+        transparent
+
+        3px
+
+    );
+
+
+}
+
+
+
+
+
+/* =====================================================
+   MOBILE / SMALL SCREEN SUPPORT
+===================================================== */
+
+
+@media
+
+(max-width: 800px)
+
+{
+
+
+    #inventory-window
+
+    {
+
+        width:
+
+        90%;
+
+
+        padding:
+
+        15px;
+
+
+    }
+
+
+
+    #inventory-grid
+
+    {
+
+        grid-template-columns:
+
+        repeat(
+
+            4,
+
+            1fr
+
+        );
+
+
+    }
+
+
+
+    .inventory-slot
+
+    {
+
+        width:
+
+        65px;
+
+
+        height:
+
+        65px;
+
+
+    }
+
+
+}
+
+
+
+
+
+/* =====================================================
+   EXTREME HORROR MODE
+===================================================== */
+
+
+.inventory-corrupted
+{
+
+    animation:
+
+    corruptedInventory
+
+    0.2s
+
+    infinite;
+
+
+}
+
+
+
+
+
+@keyframes corruptedInventory
+{
+
+
+    0%
+
+    {
+
+        transform:
+
+        translateX(0);
+
+
+    }
+
+
+
+    25%
+
+    {
+
+        transform:
+
+        translateX(-4px);
+
+
+    }
+
+
+
+    50%
+
+    {
+
+        transform:
+
+        translateX(4px);
+
+
+    }
+
+
+
+    100%
+
+    {
+
+        transform:
+
+        translateX(0);
+
+
+    }
+
+
+}
+/* =====================================================
+   ITEM RARITY SYSTEM
+===================================================== */
+
+
+
+.item-rare
+{
+
+    border-color:
+
+    #b30000;
+
+
+    box-shadow:
+
+    0 0 15px
+
+    crimson;
+
+
+}
+
+
+
+
+.item-important
+{
+
+    border:
+
+    3px solid
+
+    red;
+
+
+    animation:
+
+    importantPulse
+
+    2s
+
+    infinite;
+
+
+}
+
+
+
+
+
+@keyframes importantPulse
+{
+
+
+    0%
+
+    {
+
+        box-shadow:
+
+        0 0 5px
+
+        red;
+
+
+    }
+
+
+    50%
+
+    {
+
+        box-shadow:
+
+        0 0 25px
+
+        red;
+
+
+    }
+
+
+    100%
+
+    {
+
+        box-shadow:
+
+        0 0 5px
+
+        red;
+
+
+    }
+
+
+}
+
+
+
+
+
+/* =====================================================
+   HIDDEN / SECRET ITEMS
+===================================================== */
+
+
+
+.secret-item
+{
+
+    filter:
+
+    brightness(0.2);
+
+
+
+    border-color:
+
+    black;
+
+
+
+}
+
+
+
+.secret-item:hover
+{
+
+    filter:
+
+    brightness(1);
+
+
+
+    box-shadow:
+
+    0 0 20px
+
+    darkred;
+
+
+}
+
+
+
+
+
+/* =====================================================
+   LORE DOCUMENT ITEMS
+===================================================== */
+
+
+
+.lore-document
+{
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #1a0000,
+
+        #050000
+
+    );
+
+
+
+    border-color:
+
+    #770000;
+
+
+
+}
+
+
+
+
+
+.lore-document .item-icon
+{
+
+    filter:
+
+    grayscale(0.5);
+
+
+
+}
+
+
+
+
+
+/* =====================================================
+   LOCKED ITEMS
+===================================================== */
+
+
+
+.locked-item
+{
+
+    opacity:
+
+    0.35;
+
+
+
+    filter:
+
+    grayscale(1);
+
+
+
+    border-style:
+
+    dashed;
+
+
+}
+
+
+
+.locked-item::after
+{
+
+    content:
+
+    "LOCKED";
+
+
+
+    display:
+
+    block;
+
+
+
+    color:
+
+    darkred;
+
+
+
+    font-size:
+
+    12px;
+
+
+}
+
+
+
+
+
+/* =====================================================
+   ITEM TOOLTIP
+===================================================== */
+
+
+
+.item-tooltip
+{
+
+    position:
+
+    absolute;
+
+
+
+    background:
+
+    rgba(
+
+        0,
+
+        0,
+
+        0,
+
+        0.9
+
+    );
+
+
+
+    border:
+
+    2px solid
+
+    darkred;
+
+
+
+    padding:
+
+    10px;
+
+
+
+    color:
+
+    white;
+
+
+
+    font-family:
+
+    monospace;
+
+
+
+    pointer-events:
+
+    none;
+
+
+
+    opacity:
+
+    0;
+
+
+
+    transition:
+
+    0.2s;
+
+
+}
+
+
+
+
+
+.inventory-slot:hover
+
+.item-tooltip
+{
+
+    opacity:
+
+    1;
+
+
+}
+
+
+
+
+
+/* =====================================================
+   FINAL INVENTORY ATMOSPHERE
+===================================================== */
+
+
+
+#inventory-screen::before
+{
+
+    content:
+
+    "";
+
+
+
+    position:
+
+    absolute;
+
+
+
+    inset:
+
+    0;
+
+
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        transparent,
+
+        black
+
+    );
+
+
+
+    pointer-events:
+
+    none;
+
+
+}
+
+
+
+
+
+/* =====================================================
+   INVENTORY COMPLETE
+   THE RIDGE SOCIETY
+   VERSION 0.1 ALPHA
+===================================================== */

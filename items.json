@@ -1,1 +1,239 @@
+{
+    "items":
+    [
+        {
+            "id": "knife",
+            "name": "Knife",
+            "description": "A sharp hunting knife.",
+            "icon": "assets/icons/knife.png",
+            "type": "weapon",
+            "weight": 2,
+            "value": 50,
+            "usable": true,
+            "stackable": false,
+            "maxStack": 1
+        },
 
+        {
+            "id": "lantern",
+            "name": "Lantern",
+            "description": "Lights the darkness.",
+            "icon": "assets/icons/lantern.png",
+            "type": "tool",
+            "weight": 3,
+            "value": 40,
+            "usable": true,
+            "stackable": false,
+            "maxStack": 1
+        },
+
+        {
+            "id": "map",
+            "name": "Old Map",
+            "description": "A worn map of The Ridge.",
+            "icon": "assets/icons/map.png",
+            "type": "tool",
+            "weight": 1,
+            "value": 20,
+            "usable": true,
+            "stackable": false,
+            "maxStack": 1
+        },
+
+        {
+            "id": "compass",
+            "name": "Compass",
+            "description": "Always points north.",
+            "icon": "assets/icons/compass.png",
+            "type": "tool",
+            "weight": 1,
+            "value": 25,
+            "usable": true,
+            "stackable": false,
+            "maxStack": 1
+        },
+
+        {
+            "id": "rope",
+            "name": "Rope",
+            "description": "Strong climbing rope.",
+            "icon": "assets/icons/rope.png",
+            "type": "tool",
+            "weight": 4,
+            "value": 35,
+            "usable": true,
+            "stackable": false,
+            "maxStack": 1
+        }
+ ,
+        {
+            "id": "crystal",
+            "name": "Purple Crystal",
+            "description": "A strange crystal that hums with an unnatural energy.",
+            "icon": "assets/icons/crystal.png",
+            "type": "material",
+            "weight": 1,
+            "value": 120,
+            "usable": false,
+            "stackable": false,
+            "maxStack": 1
+        },
+
+        {
+            "id": "coin",
+            "name": "Ancient Coin",
+            "description": "An old ceremonial coin bearing the Order's symbol.",
+            "icon": "assets/icons/coin.png",
+            "type": "misc",
+            "weight": 0.1,
+            "value": 15,
+            "usable": false,
+            "stackable": true,
+            "maxStack": 99
+        },
+
+        {
+            "id": "prayer_book",
+            "name": "Prayer Book",
+            "description": "Contains rituals practiced by the Order.",
+            "icon": "assets/icons/prayer_book.png",
+            "type": "document",
+            "weight": 1,
+            "value": 80,
+            "usable": true,
+            "stackable": false,
+            "maxStack": 1
+        },
+
+        {
+            "id": "church_key",
+            "name": "Church Key",
+            "description": "Unlocks the front entrance of the church.",
+            "icon": "assets/icons/church_key.png",
+            "type": "key",
+            "weight": 0.2,
+            "value": 0,
+            "usable": true,
+            "stackable": false,
+            "maxStack": 1
+        },
+
+        {
+            "id": "ritual_dagger",
+            "name": "Ritual Dagger",
+            "description": "A ceremonial blade stained with dried blood.",
+            "icon": "assets/icons/ritual_dagger.png",
+            "type": "weapon",
+            "weight": 2,
+            "value": 250,
+            "usable": true,
+            "stackable": false,
+            "maxStack": 1
+        },
+
+        {
+            "id": "first_aid_kit",
+            "name": "First Aid Kit",
+            "description": "Restores a portion of your health.",
+            "icon": "assets/icons/first_aid_kit.png",
+            "type": "consumable",
+            "weight": 2,
+            "value": 90,
+            "usable": true,
+            "stackable": true,
+            "maxStack": 5
+        },
+
+        {
+            "id": "strange_note",
+            "name": "Strange Note",
+            "description": "Someone has written: 'The mountain watches.'",
+            "icon": "assets/icons/note.png",
+            "type": "document",
+            "weight": 0.1,
+            "value": 0,
+            "usable": true,
+            "stackable": false,
+            "maxStack": 1
+        },
+
+        {
+            "id": "church_basement_key",
+            "name": "Basement Key",
+            "description": "Opens the locked door beneath the church.",
+            "icon": "assets/icons/basement_key.png",
+            "type": "key",
+            "weight": 0.2,
+            "value": 0,
+            "usable": true,
+            "stackable": false,
+            "maxStack": 1
+        }
+  ,
+        {
+            "id": "order_mask",
+            "name": "Order Mask",
+            "description": "A ceremonial mask worn by members of the Order.",
+            "icon": "assets/icons/order_mask.png",
+            "type": "quest",
+            "weight": 1,
+            "value": 150,
+            "usable": false,
+            "stackable": false,
+            "maxStack": 1
+        },
+
+        {
+            "id": "ritual_scroll",
+            "name": "Ritual Scroll",
+            "description": "An ancient scroll describing a forgotten ceremony.",
+            "icon": "assets/icons/ritual_scroll.png",
+            "type": "document",
+            "weight": 0.5,
+            "value": 200,
+            "usable": true,
+            "stackable": false,
+            "maxStack": 1
+        },
+
+        {
+            "id": "generator_fuse",
+            "name": "Generator Fuse",
+            "description": "A replacement fuse capable of restoring power.",
+            "icon": "assets/icons/generator_fuse.png",
+            "type": "quest",
+            "weight": 1,
+            "value": 40,
+            "usable": true,
+            "stackable": false,
+            "maxStack": 1
+        },
+
+        {
+            "id": "strange_key",
+            "name": "Strange Key",
+            "description": "A key with strange carvings that doesn't match any ordinary lock.",
+            "icon": "assets/icons/strange_key.png",
+            "type": "key",
+            "weight": 0.2,
+            "value": 0,
+            "usable": true,
+            "stackable": false,
+            "maxStack": 1
+        },
+
+        {
+            "id": "cassette_tape",
+            "name": "Cassette Tape",
+            "description": "An old recording labeled only with a date.",
+            "icon": "assets/icons/cassette_tape.png",
+            "type": "document",
+            "weight": 0.1,
+            "value": 25,
+            "usable": true,
+            "stackable": false,
+            "maxStack": 1
+        }
+
+    ]
+}    
